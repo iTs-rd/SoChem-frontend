@@ -8,6 +8,7 @@ import Forum from './components/forum-home'
 
 const routing = (
   <BrowserRouter>
+      <Route exact path="/home" component={App}/>
       <Route exact path="/forum" component={Forum}/>
   </BrowserRouter>
 )
