@@ -21,7 +21,7 @@ class Navbar extends Component {
                                 <a className="nav-link" name="events" onClick={()=> {window.location='/home'}}>Events</a>
                             </li>
                             <li className={this.props.clicked === "forum" ? "active nav-item" : "nav-item"}>
-                                <a className="nav-link" name="forum" onClick={()=> {window.location='/home'}}>Forum</a>
+                                <a className="nav-link" name="forum" onClick={()=> {window.location='/forum'}}>Forum</a>
                             </li>
                         </ul>
 
