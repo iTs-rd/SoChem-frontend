@@ -4,12 +4,17 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { Route, BrowserRouter } from 'react-router-dom';
-import Forum from './components/forum-home'
+import { CookiesProvider } from 'react-cookie';
+import Forum from './components/forum-home';
+import Auth from './components/auth';
 
 const routing = (
   <BrowserRouter>
+    <CookiesProvider>
       <Route exact path="/home" component={App}/>
       <Route exact path="/forum" component={Forum}/>
+      <Route exact path="/login" component={Auth}/>
+    </CookiesProvider>
   </BrowserRouter>
 )
 

@@ -6,7 +6,8 @@ import Navbar from './components/navbar';
 function App() {
   return (
     <div>
-      <Navbar />
+      <Navbar/>
+      <h1>WELCOME TO SOCHEM'S HOME PAGE</h1>
     </div>
   );
 }

@@ -1,11 +1,22 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import './navbar.css';
+import { useCookies } from 'react-cookie';
 
 
-class Navbar extends Component {    
+function Navbar(){   
+    const [ token, setToken, deleteToken] = useCookies(['mr-token']); 
+    const [ isLogin, setIsLogin ] = useState(true);
 
-    render() {
-        return (
+    const logoutUser = () => {
+        deleteToken(['mr-token']);
+        setIsLogin(false);
+    }
+
+    useEffect ( () => {
+        if(!token['mr-token']) setIsLogin(false);
+    }, [],[token])
+
+    return (
             <div>
                 <nav className="navbar navbar-expand-lg navbar-light">
                     <a className="navbar-brand pl-4" id="nbrand" name="home" onClick={()=> {window.location='/home'}}>SoChem</a>
@@ -14,27 +25,29 @@ class Navbar extends Component {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav ml-auto">
-                            <li className={this.props.clicked === "home" ? "active nav-item" : "nav-item"}>
+                            <li className="nav-item">
                                 <a className="nav-link" name="home" onClick={()=> {window.location='/home'}}>Home</a>
                             </li>
-                            <li className={this.props.clicked === "events" ? "active nav-item" : "nav-item"}>
+                            <li className="nav-item">
                                 <a className="nav-link" name="events" onClick={()=> {window.location='/home'}}>Events</a>
                             </li>
-                            <li className={this.props.clicked === "forum" ? "active nav-item" : "nav-item"}>
+                            <li className="nav-item">
                                 <a className="nav-link" name="forum" onClick={()=> {window.location='/home'}}>Forum</a>
                             </li>
                         </ul>
-
+                        
                         <ul className="navbar-nav">
-                            <li className={this.props.clicked === "login" ? "active nav-item" : "nav-item"}>
-                                <a className="nav-link" name="login" onClick={()=> {window.location='/home'}}>Login</a>
+                            <li className="nav-item">
+                            { !(isLogin) ?
+                                <a className="nav-link" name="login" onClick={()=> {window.location='/login'}}>Login</a> :
+                                <a className="nav-link" name="logout" onClick={logoutUser}>LogOut</a> 
+                            }
                             </li>
                         </ul>
                     </div>
                 </nav>       
         </div>
-        );
-    }
+    );
 }
 
 export default Navbar;
