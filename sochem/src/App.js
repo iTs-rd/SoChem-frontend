@@ -7,7 +7,10 @@ function App() {
   return (
     <div>
       <Navbar/>
-      <h1>WELCOME TO SOCHEM'S HOME PAGE</h1>
+      <div className="container">
+          <h1>WELCOME TO SOCHEM'S HOME PAGE</h1>
+      </div>
+      
     </div>
   );
 }
