@@ -18,4 +18,15 @@ export default class API {
             body: JSON.stringify(body)
             }).then( resp => resp.json())
     }
+
+    static userFromToken(body) {
+        return fetch('http://127.0.0.1:8000/api/user-from-token/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Token ${body}`,
+            },
+            body: JSON.stringify({body})
+            }).then( resp => resp.json())
+    }
 }

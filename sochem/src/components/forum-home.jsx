@@ -3,6 +3,8 @@ import Comment from './forum-comment';
 import Navbar from './navbar';
 import './forum-home.css';
 import Form from './forum-form';
+import API from '../api-service'; 
+import { useCookies } from 'react-cookie';
 
 var FontAwesome = require('react-fontawesome');
 
@@ -13,6 +15,8 @@ function Forum(){
     const [showComment, setShowComment] = useState(null);
     const [showNewPost, setShowNewPost] = useState(false);
     const [user, setUser] = useState();
+
+    const [ token, setToken ] = useCookies(['mr-token']);
 
      useEffect(()=>{
         fetch('http://127.0.0.1:8000/forum-post/', {
@@ -26,17 +30,9 @@ function Forum(){
             })
           .catch( error => console.log(error));
 
-          fetch('http://127.0.0.1:8000/user-from-token/', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Token 5b77e17acaa7493b4f76430799db16a76ac9ba6d`,
-            },
-            body: JSON.stringify({
-                'token': '5b77e17acaa7493b4f76430799db16a76ac9ba6d',
-            })
-            }).then( resp => resp.json()).then(res => setUser(res))
-            .catch( error => console.log(error));
+          API.userFromToken(token['mr-token'])
+          .then(res => setUser(res))
+          .catch( error => console.log(error));
           
     }, []);
     
