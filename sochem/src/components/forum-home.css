@@ -1,5 +1,5 @@
 #heading{
-    background-color: #1AA2B8;
+    background-color: #2e66a5;
 }
 
 #newComment{
@@ -13,4 +13,17 @@
 
 #allComments:nth-of-type(odd) {
     background: #e6f0f2;
+}
+
+body{
+    background-color:#f4f6f7;
+}
+
+#forum-heading{
+    text-align: center;
+}
+
+#sochem-logo{
+    height: 70px;
+    width: 70px;
 }

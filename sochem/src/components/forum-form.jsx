@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { useCookies } from 'react-cookie';
 
 function Form(props){
 
     const [heading, setHeading] = useState('');
     const [body, setBody] = useState('');
-
+    const [token, setToken] = useCookies(['mr-token']);
     const headingChanged = evt =>{
         setHeading(evt.target.value);
     }
@@ -16,7 +17,7 @@ function Form(props){
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Token 5b77e17acaa7493b4f76430799db16a76ac9ba6d`,
+                'Authorization': `Token ${token['mr-token']}`,
             },
             body: JSON.stringify({
                 'heading': heading,
@@ -32,7 +33,7 @@ function Form(props){
             <form>
                 <div className="form-group">
                     <label for="title">Title</label>
-                    <input type="text" className="form-control" id="title" onChange={headingChanged}/>
+                    <input type="text" className="form-control" id="title" onChange={headingChanged} placeholder="Mention your query briefly."/>
                 </div>
                 <div className="form-group">
                     <label for="body">Body</label>
@@ -46,3 +47,4 @@ function Form(props){
 }
 
 export default Form;
+

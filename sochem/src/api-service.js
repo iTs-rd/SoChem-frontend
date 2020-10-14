@@ -19,14 +19,15 @@ export default class API {
             }).then( resp => resp.json())
     }
 
-    static userFromToken(body) {
-        return fetch('http://127.0.0.1:8000/api/user-from-token/', {
+    static newComment(body, token){
+        console.log(token['token']);
+        return fetch('http://127.0.0.1:8000/api/forum-comment/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Token ${body}`,
+                'Authorization': `Token ${token['token']}`,
             },
-            body: JSON.stringify({body})
+            body: JSON.stringify(body)
             }).then( resp => resp.json())
     }
 }

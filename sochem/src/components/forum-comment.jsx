@@ -1,18 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import './forum-home.css';
+import API from '../api-service';
+import { useCookies } from 'react-cookie';
 var FontAwesome = require('react-fontawesome');
 
 
 function Comment(props){
     const [comments, setComments] = useState([]);
     const [newComment, setNewComment] = useState('');
-
+    const [token, setToken] = useCookies(['mr-token']);
     useEffect(()=>{
-        console.log('reload');
-        fetch(`http://127.0.0.1:8000/forum-comment?post_id=${props.postId}`, {
+        fetch(`http://127.0.0.1:8000/api/forum-comment?post_id=${props.postId}`, {
             method: 'GET',
             headers: {
-              'Authorization': `Token 5b77e17acaa7493b4f76430799db16a76ac9ba6d`
+              'Authorization': `Token ${token['mr-token']}`
             }
           }).then( resp => resp.json())
           .then( res => setComments(res))
@@ -21,24 +22,16 @@ function Comment(props){
     }, []);
 
     const newCommentChanged = evt =>{
+        console.log(evt.target.value);
         setNewComment(evt.target.value);
     }
     const postNewComment = () =>{
         
-        fetch('http://127.0.0.1:8000/forum-comment/', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Token 5b77e17acaa7493b4f76430799db16a76ac9ba6d`,
-            },
-            body: JSON.stringify({
-                'comment': newComment,
-                'post_id': props.postId,
-            })
-            }).then( resp => resp.json()).then(res => setComments([res,...comments]))
+        API.newComment({'comment':newComment, 'post_id':props.postId}, {'token':token['mr-token']})
+        .then(res => setComments([res,...comments]))
             .catch( error => console.log(error))
 
-            setNewComment('');
+        setNewComment('');
             
     }
     return(
@@ -46,7 +39,7 @@ function Comment(props){
             {comments.map(comment => {
                 return(
                     <div key={comment.id} id="allComments">
-                        <h5 className="d-inline mr-2"><FontAwesome name="user-circle"/> {props.user.first_name} {props.user.last_name}</h5>
+                        <h5 className="d-inline mr-2 text-secondary"><FontAwesome name="user-circle"/> <span className="text-secondary">{comment.author_name}</span></h5>
                         <h5><FontAwesome name="arrow-circle-right" className="mr-1"/>{comment.comment}</h5>
                         
                     </div>
