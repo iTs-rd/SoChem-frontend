@@ -7,6 +7,7 @@ import { Route, BrowserRouter } from 'react-router-dom';
 import { CookiesProvider } from 'react-cookie';
 import Forum from './components/forum-home';
 import Auth from './components/auth';
+import Events from './components/events.jsx';
 
 const routing = (
   <BrowserRouter>
@@ -14,6 +15,7 @@ const routing = (
       <Route exact path="/home" component={App}/>
       <Route exact path="/forum" component={Forum}/>
       <Route exact path="/login" component={Auth}/>
+      <Route exact path="/events" component={Events}/>
     </CookiesProvider>
   </BrowserRouter>
 )

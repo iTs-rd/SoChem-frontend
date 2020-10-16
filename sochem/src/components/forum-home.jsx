@@ -15,8 +15,6 @@ function Forum(){
     const [user, setUser] = useState();
     const [token, setToken] = useCookies(['mr-token']);
 
-    const [ token, setToken ] = useCookies(['mr-token']);
-
      useEffect(()=>{
          
         fetch('http://127.0.0.1:8000/api/forum-post/', {
@@ -62,7 +60,7 @@ function Forum(){
         <div>
             <Navbar/>
             
-            <div className="jumbotron" style={{background:'#dbdbdb'}}>
+            <div className="jumbotron" style={{background:'#dbdbdb'},{marginTop:'95px'}}>
                 <h1 id="forum-heading">SoChem Forum</h1>
             </div>
             
