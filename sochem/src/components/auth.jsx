@@ -30,7 +30,7 @@ function Auth(){
     return (
             <div>
                 <Navbar/>
-                <div className="container jumbotron">
+                <div className="container jumbotron" style={{marginTop:'100px'}}>
 
                     {isLogin ? <h1>Login</h1> : <h1>Register</h1>}
 

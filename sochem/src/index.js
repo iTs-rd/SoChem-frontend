@@ -9,6 +9,8 @@ import Forum from './components/forum-home';
 import Auth from './components/auth';
 import Cloud from './components/cloud'
 import Profile from './components/profile';
+import Events from './components/events.jsx';
+
 const routing = (
   <BrowserRouter>
     <CookiesProvider>
@@ -16,6 +18,7 @@ const routing = (
       <Route exact path="/forum" component={Forum}/>
       <Route exact path="/login" component={Auth}/>
       <Route exact path="/cloud" component={Cloud}/>
+      <Route exact path="/events" component={Events}/>
     </CookiesProvider>
   </BrowserRouter>
 )
