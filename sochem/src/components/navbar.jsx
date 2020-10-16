@@ -35,6 +35,9 @@ function Navbar(){
                             <li className="nav-item">
                                 <a className="nav-link" name="forum" onClick={()=> {window.location='/forum'}}>Forum</a>
                             </li>
+                            <li className="nav-item">
+                                <a className="nav-link" name="cloud" onClick={()=> {window.location='/cloud'}}>Cloud</a>
+                            </li>
                         </ul>
                         
                         <ul className="navbar-nav">

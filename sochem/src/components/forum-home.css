@@ -19,7 +19,7 @@ body{
     background-color:#f4f6f7;
 }
 
-#forum-heading{
+.jumbotron-heading-top{
     text-align: center;
 }
 
@@ -27,3 +27,18 @@ body{
     height: 70px;
     width: 70px;
 }
+.card{
+    width: 13rem;
+    margin-inline-start: 2rem;
+    margin-inline-end: 2rem;
+    background-color: #F4F6F7;
+    border: none;
+    display:inline-block;
+}
+.card-body{
+    padding: 1rem;
+}
+a{
+    color: black;
+}
+

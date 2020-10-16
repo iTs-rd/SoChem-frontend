@@ -7,13 +7,15 @@ import { Route, BrowserRouter } from 'react-router-dom';
 import { CookiesProvider } from 'react-cookie';
 import Forum from './components/forum-home';
 import Auth from './components/auth';
-
+import Cloud from './components/cloud'
+import Profile from './components/profile';
 const routing = (
   <BrowserRouter>
     <CookiesProvider>
       <Route exact path="/home" component={App}/>
       <Route exact path="/forum" component={Forum}/>
       <Route exact path="/login" component={Auth}/>
+      <Route exact path="/cloud" component={Cloud}/>
     </CookiesProvider>
   </BrowserRouter>
 )

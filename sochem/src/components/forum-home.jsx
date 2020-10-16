@@ -61,14 +61,14 @@ function Forum(){
             <Navbar/>
             
             <div className="jumbotron" style={{background:'#dbdbdb'}}>
-                <h1 id="forum-heading">SoChem Forum</h1>
+                <h1 className="jumbotron-heading-top">SoChem Forum</h1>
             </div>
             
             <div className="container">
 
                 <div className="row">
                     <div className="col-md-4 col-0 pt-1">
-                        {showNewPost ? null : <button className="btn btn-success btn-lg mt-5" onClick={newPostToggle}>Add New Post</button>}
+                        {showNewPost ? null : <button className="btn btn-success btn-lg mt-4" onClick={newPostToggle}>Add New Post</button>}
                         {showNewPost ? <Form cancelClicked={cancelClicked} addPost={addPost}/> : null}
                         <hr></hr>
                     </div>
@@ -100,6 +100,7 @@ function Forum(){
                     </div>
                 </div>
             </div>
+            <div class="circle">Hello I am A Circle</div>
         </div>
         
 
