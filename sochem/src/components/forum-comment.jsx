@@ -45,12 +45,14 @@ function Comment(props){
                     </div>
                 );
             })}
-        <form className="form-inline">
-            <div className="mt-2 mr-2 mb-2">
-                <input id="newComment" type="text" value={newComment} className="form-control" onChange={newCommentChanged}/>
-            </div>
-            <h2 onClick={postNewComment} className="btn btn-primary mt-2 mb-2 p-1">Comment</h2>
-        </form>
+        {props.allowAdd ? 
+            <form className="form-inline">
+                <div className="mt-2 mr-2 mb-2">
+                    <input id="newComment" type="text" value={newComment} className="form-control" onChange={newCommentChanged}/>
+                </div>
+                <h2 onClick={postNewComment} className="btn btn-primary mt-2 mb-2 p-1">Comment</h2>
+            </form>
+        : null}
 
         </div>
     );
