@@ -60,7 +60,7 @@ function Forum(){
         <div>
             <Navbar/>
             
-            <div className="jumbotron" style={{background:'#dbdbdb'},{marginTop:'95px'}}>
+            <div className="jumbotron text-center" style={{background:'#dbdbdb'},{marginTop:'95px'}}>
                 <h1 id="forum-heading">SoChem Forum</h1>
             </div>
             
@@ -90,7 +90,7 @@ function Forum(){
                                     <span className="ml-2 text-dark">{showComment==post.id ? <FontAwesome name="arrow-up"/> : <FontAwesome name="arrow-down"/>}</span>
                                     </h3>
                                     
-                                    {showComment==post.id ? <Comment postId={post.id} user={user}/> : null}
+                                    {showComment==post.id ? <Comment postId={post.id} user={user} allowAdd={true}/> : null}
                                     </span>
                                     
                                 </div>   
@@ -100,7 +100,6 @@ function Forum(){
                     </div>
                 </div>
             </div>
-            <div class="circle">Hello I am A Circle</div>
         </div>
         
 

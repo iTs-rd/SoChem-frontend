@@ -19,6 +19,7 @@ const routing = (
       <Route exact path="/login" component={Auth}/>
       <Route exact path="/cloud" component={Cloud}/>
       <Route exact path="/events" component={Events}/>
+      <Route exact path="/profile" component={Profile}/>
     </CookiesProvider>
   </BrowserRouter>
 )

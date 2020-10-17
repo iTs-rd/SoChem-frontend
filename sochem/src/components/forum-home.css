@@ -41,4 +41,15 @@ body{
 a{
     color: black;
 }
+.card-profile-main{
+    width: 100%;
+    margin-left: 18px;
+}
 
+.image-card-profile-main{
+    border-radius: 100%;
+    
+}
+#profile-comment-all:nth-of-type(odd){
+    background-color: #E9ECEF;
+}
