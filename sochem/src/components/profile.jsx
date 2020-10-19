@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useCookies } from 'react-cookie';
 import Navbar from './navbar';
-import logo from './images/me.jpeg';
 import Comment from './forum-comment';
 var FontAwesome = require('react-fontawesome');
 
@@ -94,7 +93,6 @@ function Profile(){
               .catch( error => console.log(error));
         }
     }
-
     return (
         
         <div>  
@@ -107,7 +105,9 @@ function Profile(){
                 <div className="row pt-5 pl-0">
                     <div className="col-11 ml-0 col-md-4">
                         <div className="card border card-profile-main rounded p-3">
-                            <img className="card-img-top image-card-profile-main" src={logo} alt="Card image cap"/>
+                            {userDetail ?
+                            <img className="card-img-top image-card-profile-main" src={"http://127.0.0.1:8000"+userDetail[0].profile_photo} alt="Card image cap"/>
+                                :null}
                                 <div className="card-body">
                                     <h3 className="card-title mb-4">{user && user.first_name} {user && user.last_name}</h3>
                                     <h5><FontAwesome name="info-circle"/> {userDetail && userDetail[0].batch}</h5>
