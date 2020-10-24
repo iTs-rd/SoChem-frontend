@@ -1,4 +1,5 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Cabin&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@500&display=swap');.App {
   text-align: center;
 }
 
@@ -15,5 +16,17 @@
 
 .sochem {
   margin-top: 100px;
+}
+
+#about-sochem-home{
+  font-family: 'Cabin', sans-serif;
+}
+
+.alternate-bgcolor:nth-of-type(even) {
+  background: #E6F0F2
+}
+
+#home-forum-name{
+  font-family: 'Tajawal', sans-serif;
 }
 

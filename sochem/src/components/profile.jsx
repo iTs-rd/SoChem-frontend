@@ -96,7 +96,7 @@ function Profile(){
     }
     return (
         
-        <div>  
+        <div className="body-font">  
             <Navbar/>
             {getUserDetail()}
             {getAllForum()}

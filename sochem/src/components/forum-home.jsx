@@ -4,6 +4,7 @@ import Navbar from './navbar';
 import './forum-home.css';
 import Form from './forum-form';
 import { useCookies } from 'react-cookie';
+import Footer from './footer';
 var FontAwesome = require('react-fontawesome');
 
 
@@ -61,7 +62,7 @@ function Forum(){
             <Navbar/>
             
             <div className="jumbotron text-center" style={{background:'#dbdbdb'},{marginTop:'95px'}}>
-                <h1 id="forum-heading">SoChem Forum</h1>
+                <h1 className="jumbotron-heading-top">SoChem Forum</h1>
             </div>
             
             <div className="container">
@@ -72,12 +73,12 @@ function Forum(){
                         {showNewPost ? <Form cancelClicked={cancelClicked} addPost={addPost}/> : null}
                         <hr></hr>
                     </div>
-                    <div className="col-md-8 col-12">
+                    <div className="col-md-8 col-12 body-font">
                         {posts.length===0 ? <h1 style={{marginTop:300, marginLeft:150}}>No post to show :(</h1> : null}
                         {posts.map((post, index) => {
                             return (
                                 <div className="border mt-4 rounded p-2" key={post.id}>
-                                    <div className="jumbotron p-2 mb-1 mt-1" id="heading">
+                                    <div className="jumbotron p-2 mb-1 mt-1" id="heading-forum-post">
                                         <h3 className="text-light">{post.heading}</h3>
                                         <span className="text-light"><FontAwesome name="user"/> {user && post.author_name}</span>
                                         <span className="ml-5 text-light"><FontAwesome name="clock"/>{post.time}   {post.date}</span>
@@ -100,6 +101,7 @@ function Forum(){
                     </div>
                 </div>
             </div>
+            <Footer/>
         </div>
         
 
