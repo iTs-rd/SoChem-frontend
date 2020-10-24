@@ -12,7 +12,6 @@ function Auth(){
     const [ token, setToken ] = useCookies(['mr-token']);
 
     useEffect( () => {
-        console.log(token);
         if(token['mr-token']) window.location.href = '/home';
     }, [token])
  
@@ -29,6 +28,7 @@ function Auth(){
 
     return (
             <div>
+                {console.log('richa')}
                 <Navbar/>
                 <div className="container jumbotron" style={{marginTop:'100px'}}>
 

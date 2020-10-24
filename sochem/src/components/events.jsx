@@ -1,10 +1,33 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from './navbar';
+import Anevent from './anevent';
+import Allevents from './allevents';
 import './events.css';
+
+import API from '../api-service'; 
 import { useCookies } from 'react-cookie';
 import API from '../api-service';
 
 function Events() {
+    
+    const [ eventlist, setEventlist] = useState([]);
+    const [ eventnum, setEventnum ] = useState(null);
+    const [ token, setToken ] = useCookies(['mr-token']);
+
+    const allEvents = () => {
+        API.getEvents({'token':token['mr-token']})
+           .then( resp => setEventlist(resp))
+           .catch( error => console.log(error))
+    }
+
+    const eventSelected = (num) => {
+        setEventnum(num);
+    }
+
+    useEffect( () => {
+        if(!token['mr-token']) window.location.href = '/home';
+        {allEvents()}
+    },[token])
 
     const [ eventlist, setEventlist] = useState([]);
 
@@ -24,27 +47,29 @@ function Events() {
     }
     return (
         <div>
+            {console.log(eventlist)}
             <Navbar/>
             <div class="sidenav">
-            <a href="#">Upcoming Events</a>
-            <h1 id="past"><strong>Past Events</strong></h1>
-            <a href="#">Holi Celebration</a>
-            <a href="#">Makar Sankranti</a>
-            <a href="#">Group Discussion</a>
-            <a href="#">Internship Session</a>
-            <a href="#">Diwali Celebration</a>
-            <a href="#">Industrial Tour</a>
-            <a href="#">Case Study</a>
-            <a href="#">Orientation</a>
+                <a href="" onClick={ () => {eventSelected(null)}}><h1 id="past"><strong>Past Events</strong></h1></a>
+
+                {eventlist.map( evt => {
+                    return(
+                        <a href="#" onClick={ () => {eventSelected(evt.id)}}>{evt.title}</a>
+                    );
+                })}    
             </div>
             <div class="main">
-                    {eventlist.map(event =>{
+                {eventnum ?
+                    eventlist.map( evt => {
                         return(
-                            <div>
-                                {event.venue}
-                            </div>
-                        )
-                    })}
+                            evt.id==eventnum ?
+                            <Anevent event={evt}/>
+                            : null
+                        );
+                    })
+                :
+                <Allevents eventlist={eventlist}/>
+                }
             </div>
         </div>
     )
