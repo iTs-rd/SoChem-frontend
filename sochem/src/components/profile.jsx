@@ -14,7 +14,7 @@ function Profile(){
     const [userDetail, setUserDetail] = useState(null);
     const [token, setToken] = useCookies(['mr-token']);
     const [forumPost, setForumPost] = useState([]);
-    const [showComment, setShowComment] = useState(null);
+    const [showComment, setShowComment] = useState(null);   
     const [forumComment, setForumComment] = useState([]);
     const [commentCount, setCommentCount] = useState(0);
     useEffect(()=>{
@@ -97,6 +97,7 @@ function Profile(){
         
         <div>  
             <Navbar/>
+            {console.log('richa')}
             {getUserDetail()}
             {getAllForum()}
             {getAllComment()}
