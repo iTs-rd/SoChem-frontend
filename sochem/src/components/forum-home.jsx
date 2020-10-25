@@ -69,7 +69,8 @@ function Forum(){
 
                 <div className="row">
                     <div className="col-md-4 col-0 pt-1">
-                        {showNewPost ? null : <button className="btn btn-success btn-lg mt-4" onClick={newPostToggle}>Add New Post</button>}
+                        {showNewPost ? null : <div id = "a" onClick={newPostToggle}><span>Add New Post</span>
+                        <div id = "liquid"></div></div>}
                         {showNewPost ? <Form cancelClicked={cancelClicked} addPost={addPost}/> : null}
                         <hr></hr>
                     </div>

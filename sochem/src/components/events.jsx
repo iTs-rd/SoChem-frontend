@@ -6,7 +6,6 @@ import './events.css';
 
 import API from '../api-service'; 
 import { useCookies } from 'react-cookie';
-import API from '../api-service';
 
 function Events() {
     
@@ -29,10 +28,6 @@ function Events() {
         {allEvents()}
     },[token])
 
-    const [ eventlist, setEventlist] = useState([]);
-
-    const [ token, setToken ] = useCookies(['mr-token']);
-
     useEffect( () => {
         if(!token['mr-token']) window.location.href = '/home';
         console.log(eventlist);
@@ -40,11 +35,6 @@ function Events() {
         console.log(eventlist);
     },[])
 
-    const allEvents = () => {
-        API.getEvents({'token':token['mr-token']})
-           .then( resp => setEventlist(resp))
-           .catch( error => console.log(error))
-    }
     return (
         <div>
             {console.log(eventlist)}
