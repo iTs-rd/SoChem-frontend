@@ -9,6 +9,7 @@ function Comment(props){
     const [comments, setComments] = useState([]);
     const [newComment, setNewComment] = useState('');
     const [token, setToken] = useCookies(['mr-token']);
+    const [userDetails, setUserDetails] = useState(null);
     useEffect(()=>{
         fetch(`http://127.0.0.1:8000/api/forum-comment?post_id=${props.postId}`, {
             method: 'GET',
@@ -18,6 +19,15 @@ function Comment(props){
           }).then( resp => resp.json())
           .then( res => setComments(res))
           .catch( error => console.log(error))
+
+          fetch(`http://127.0.0.1:8000/api/user-extension?id=${props.user.id}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Token ${token['mr-token']}`,
+            }
+            }).then( resp => resp.json()).then(res => setUserDetails(res))
+            .catch( error => console.log(error))
 
     }, []);
 
@@ -36,11 +46,12 @@ function Comment(props){
     }
     return(
         <div>
+            {console.log(comments)}
             {comments.map(comment => {
                 return(
                     <div key={comment.id} id="allComments">
-                        <h5 className="d-inline mr-2 text-secondary"><FontAwesome name="user-circle"/> <span className="text-secondary">{comment.author_name}</span></h5>
-                        <h5><FontAwesome name="arrow-circle-right" className="mr-1"/>{comment.comment}</h5>
+                        {userDetails &&<h5 className="d-inline mr-2 text-secondary"><img id="comment-user-image" src={"http://127.0.0.1:8000"+userDetails[0].profile_photo}/> <span className="text-secondary">{comment.author_name}</span></h5>}
+                        <h5 className="mt-3"><FontAwesome name="arrow-circle-right" className="mr-1"/>{comment.comment}</h5>
                         
                     </div>
                 );

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useCookies } from 'react-cookie';
 import Navbar from './navbar';
 import Comment from './forum-comment';
+import '../components/profile.css';
 var FontAwesome = require('react-fontawesome');
 
 var gotAllForm = false;
@@ -97,7 +98,6 @@ function Profile(){
         
         <div className="body-font">  
             <Navbar/>
-            {console.log('richa')}
             {getUserDetail()}
             {getAllForum()}
             {getAllComment()}
@@ -110,7 +110,7 @@ function Profile(){
                             <img className="card-img-top image-card-profile-main" src={"http://127.0.0.1:8000"+userDetail[0].profile_photo} alt="Card image cap"/>
                                 :null}
                                 <div className="card-body">
-                                    <h3 className="card-title mb-4">{user && user.first_name} {user && user.last_name}</h3>
+                                    <h3 className="card-title mb-4" id="profile-name">{user && user.first_name} {user && user.last_name}</h3>
                                     <h5><FontAwesome name="info-circle"/> {userDetail && userDetail[0].batch}</h5>
                                     <h5><FontAwesome name="at"/> {user && user.email}</h5>
                                     <hr></hr>
@@ -118,7 +118,7 @@ function Profile(){
                                 </div>
                         </div>
                         <div className="p-3 card-profile-main border mt-4">
-                            <h2>Stats</h2>
+                            <h2 className="profile-subheading">Stats</h2>
                             <hr></hr>
                             <div className="row">
                                 <div className="col-9">
@@ -137,7 +137,7 @@ function Profile(){
                     </div>
                     <div className="col-11 col-md-7 ml-auto mr-auto mt-3 mt-md-0  rounded">
                         <div className="border p-3">
-                            <h2 className="mt-2 mb-3">Your posts :</h2>
+                            <h2 className="mt-2 mb-3 profile-subheading">Your posts :</h2>
                             <hr></hr>
                                     <div>
                                             {forumPost.map((post, index) => {
@@ -164,7 +164,7 @@ function Profile(){
                                     </div>
                         </div>
                         <div className="border mt-4">
-                            <h2 className="m-3">Your Comments:</h2>
+                            <h2 className="m-3 profile-subheading">Your Comments:</h2>
                             <hr></hr>
                             {forumComment.map(comment =>{
                                 return(
