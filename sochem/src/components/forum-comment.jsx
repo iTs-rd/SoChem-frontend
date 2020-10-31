@@ -46,7 +46,7 @@ function Comment(props){
     }
     return(
         <div>
-            {console.log(comments)}
+            {console.log(props.user)}
             {comments.map(comment => {
                 return(
                     <div key={comment.id} id="allComments">
