@@ -29,6 +29,7 @@ function Events() {
         {allEvents()}
     },[token])
 
+
     return (
         <div>
             <Navbar/>
