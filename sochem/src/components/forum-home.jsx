@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Comment from './forum-comment';
+import AllForumPost from './all-forum-post';
 import Navbar from './navbar';
 import './forum-home.css';
 import Form from './forum-form';
@@ -43,6 +44,12 @@ function Forum(){
           
     }, []);
     
+    useEffect( () => {
+        if(!token['mr-token']) window.location.href = '/login';
+    },[token])
+
+
+    
     const toggleComment = id =>{
 
         if(showComment===id) setShowComment(null);
@@ -79,19 +86,12 @@ function Forum(){
                         {posts.map((post, index) => {
                             return (
                                 <div className="border mt-4 rounded p-2" key={post.id}>
-                                    <div className="jumbotron p-2 mb-1 mt-1" id="heading-forum-post">
-                                        <h3 className="text-light">{post.heading}</h3>
-                                        <span className="text-light"><FontAwesome name="user"/> {user && post.author_name}</span>
-                                        <span className="ml-5 text-light"><FontAwesome name="clock"/>{post.time}   {post.date}</span>
-                                    </div>
-                                    <h4 className="jumbotron p-2 mb-2">
-                                            {post.body}
-                                    </h4>
+                                    <AllForumPost post={post} user={user} token={token}/>
                                     <span className="mb-5">
                                     <h3 className="text-warning" onClick={()=>toggleComment(post.id)}><FontAwesome name="comment"/>
-                                    <span className="ml-2 text-dark">{showComment==post.id ? <FontAwesome name="arrow-up"/> : <FontAwesome name="arrow-down"/>}</span>
+                                        <span className="ml-2 text-dark">{showComment==post.id ? <FontAwesome name="arrow-up"/> : <FontAwesome name="arrow-down"/>}</span>
                                     </h3>
-                                    
+                
                                     {showComment==post.id ? <Comment postId={post.id} user={user} allowAdd={true}/> : null}
                                     </span>
                                     

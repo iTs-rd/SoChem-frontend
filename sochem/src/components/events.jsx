@@ -25,7 +25,7 @@ function Events() {
     }
 
     useEffect( () => {
-        if(!token['mr-token']) window.location.href = '/home';
+        if(!token['mr-token']) window.location.href = '/login';
         {allEvents()}
     },[token])
 

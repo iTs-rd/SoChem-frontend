@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useCookies } from 'react-cookie';
 import Navbar from './navbar';
 import Comment from './forum-comment';
+import Footer from './footer';
+import EditBio from './edit-bio';
 import '../components/profile.css';
 var FontAwesome = require('react-fontawesome');
 
@@ -18,6 +20,7 @@ function Profile(){
     const [showComment, setShowComment] = useState(null);   
     const [forumComment, setForumComment] = useState([]);
     const [commentCount, setCommentCount] = useState(0);
+    const [editBioBool, setEditBioBool] = useState(false);
     useEffect(()=>{
         fetch('http://127.0.0.1:8000/api/user-from-token/', {
             method: 'POST',
@@ -94,6 +97,21 @@ function Profile(){
               .catch( error => console.log(error));
         }
     }
+    const toggleEditBio = () => {
+        var temp = editBioBool;
+        if(editBioBool) temp = false;
+        else temp = true;
+        setEditBioBool(temp);
+    }   
+    const updateBio = newBio =>{
+        let temp = userDetail;
+        temp[0].bio = newBio;
+        setUserDetail(temp);
+    }
+    useEffect( () => {
+        if(!token['mr-token']) window.location.href = '/login';
+    },[token])
+
     return (
         
         <div className="body-font">  
@@ -114,7 +132,11 @@ function Profile(){
                                     <h5><FontAwesome name="info-circle"/> {userDetail && userDetail[0].batch}</h5>
                                     <h5><FontAwesome name="at"/> {user && user.email}</h5>
                                     <hr></hr>
+                                    {editBioBool == false &&
                                     <p className="card-text"> <FontAwesome name="quote-left"/> {userDetail && userDetail[0].bio} <FontAwesome name="quote-right"/></p>
+                                    }
+                                    {editBioBool == false && <span style={{fontSize:20}}><FontAwesome name="pen" onClick={toggleEditBio}/></span>}
+                                    {editBioBool && <EditBio lastBio={userDetail[0].bio} cancelClicked={toggleEditBio} userDetail={userDetail} updateBio={updateBio}/>}
                                 </div>
                         </div>
                         <div className="p-3 card-profile-main border mt-4">
@@ -177,7 +199,7 @@ function Profile(){
                     </div>
                 </div>
             </div>
-            
+            <Footer/>
         </div>
     );
 }

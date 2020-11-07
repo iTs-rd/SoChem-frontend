@@ -1,5 +1,6 @@
 import React , { useState, useEffect } from 'react';
 import Navbar from './navbar';
+import { useCookies } from 'react-cookie';
 import logo from './sochemlogo.png';
 import coding from './images/cloud-coding.png';
 import books from './images/cloud-books.png';
@@ -12,6 +13,12 @@ import oe from './images/cloud-oe.png';
 
 
 function Cloud(){
+
+    const [ token, setToken ] = useCookies(['mr-token']);
+    useEffect( () => {
+        if(!token['mr-token']) window.location.href = '/login';
+    },[token])
+
 
     return(
         <div className="body-font">

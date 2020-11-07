@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import AllComemnts from './all-comments';
 import './forum-home.css';
 import API from '../api-service';
 import { useCookies } from 'react-cookie';
@@ -19,16 +20,6 @@ function Comment(props){
           }).then( resp => resp.json())
           .then( res => setComments(res))
           .catch( error => console.log(error))
-
-          fetch(`http://127.0.0.1:8000/api/user-extension?id=${props.user.id}`, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Token ${token['mr-token']}`,
-            }
-            }).then( resp => resp.json()).then(res => setUserDetails(res))
-            .catch( error => console.log(error))
-
     }, []);
 
     const newCommentChanged = evt =>{
@@ -46,14 +37,9 @@ function Comment(props){
     }
     return(
         <div>
-            {console.log(props.user)}
             {comments.map(comment => {
                 return(
-                    <div key={comment.id} id="allComments">
-                        {userDetails &&<h5 className="d-inline mr-2 text-secondary"><img id="comment-user-image" src={"http://127.0.0.1:8000"+userDetails[0].profile_photo}/> <span className="text-secondary">{comment.author_name}</span></h5>}
-                        <h5 className="mt-3"><FontAwesome name="arrow-circle-right" className="mr-1"/>{comment.comment}</h5>
-                        
-                    </div>
+                    <AllComemnts comment={comment} token={token}/>
                 );
             })}
         {props.allowAdd ? 
