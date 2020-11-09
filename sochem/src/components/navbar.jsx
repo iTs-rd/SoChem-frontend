@@ -26,18 +26,21 @@ function Navbar(){
                     </button>
                     <div className="collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav ml-auto">
-                            <li className="nav-item">
+                            <a className="nav-item" href="#">
                                 <a className="nav-link" name="home" onClick={()=> {window.location='/home'}}>Home</a>
-                            </li>
-                            <li className="nav-item">
+                            </a>
+                            <a className="nav-item" href="#">
                                 <a className="nav-link" name="events" onClick={()=> {window.location='/events'}}>Events</a>
-                            </li>
-                            <li className="nav-item">
+                            </a>
+                            <a className="nav-item" href="#">
                                 <a className="nav-link" name="forum" onClick={()=> {window.location='/forum'}}>Forum</a>
-                            </li>
-                            <li className="nav-item">
+                            </a>
+                            <a className="nav-item" href="#">
                                 <a className="nav-link" name="cloud" onClick={()=> {window.location='/cloud'}}>Cloud</a>
-                            </li>
+                            </a>
+                            <a className="nav-item" href="#">
+                                <a className="nav-link" name="people" onClick={()=> {window.location='/people'}}>People</a>
+                            </a>
                         </ul>
                         
                         <ul className="navbar-nav">

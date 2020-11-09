@@ -310,3 +310,8 @@ a{
   border-radius: 100%;
   margin-right: 1rem;
 }
+#cross-person{
+  position: absolute;
+  right: 0;
+  top: 0;
+}
