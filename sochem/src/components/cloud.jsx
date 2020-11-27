@@ -23,7 +23,7 @@ function Cloud(){
     return(
         <div className="body-font">
             <Navbar/>
-            <div className="jumbotron" style={{background:'#dbdbdb'},{marginTop:'95px'}}>
+            <div className="jumbotron cont-home-sochem" style={{background:'#dbdbdb'},{marginTop:'95px'}}>
                 <h1 className="jumbotron-heading-top">SoChem Cloud</h1>
             </div>
             <div className="container text-center">

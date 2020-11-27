@@ -68,11 +68,11 @@ function Forum(){
         <div>
             <Navbar/>
             
-            <div className="jumbotron text-center" style={{background:'#dbdbdb'},{marginTop:'95px'}}>
+            <div className="jumbotron text-center cont-home-sochem" style={{background:'#dbdbdb'},{marginTop:'95px'}}>
                 <h1 className="jumbotron-heading-top">SoChem Forum</h1>
             </div>
             
-            <div className="container">
+            <div className="container ">
 
                 <div className="row">
                     <div className="col-md-4 col-0 pt-1">

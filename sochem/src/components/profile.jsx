@@ -157,7 +157,7 @@ function Profile(){
 
                         </div>
                     </div>
-                    <div className="col-11 col-md-7 ml-auto mr-auto mt-3 mt-md-0  rounded">
+                    <div className="col-11 col-md-7 ml-auto mr-auto mt-3 mt-md-0  rounded bg-light">
                         <div className="border p-3">
                             <h2 className="mt-2 mb-3 profile-subheading">Your posts :</h2>
                             <hr></hr>
