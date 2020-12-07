@@ -1,56 +1,58 @@
-import React , { useState, useEffect } from 'react';
-import Navbar from './navbar';
-import API from '../api-service'; 
+import React, { useState, useEffect } from 'react';
 import { useCookies } from 'react-cookie';
- 
-function Auth(){
+import Navbar from './navbar';
+import Comment from './forum-comment';
+import Footer from './footer';
+import EditBio from './edit-bio';
+import '../components/profile.css';
+import {GoogleLogin} from 'react-google-login';
+var FontAwesome = require('react-fontawesome');
 
-    const [ username, setUsername ] = useState('');
-    const [ password, setPassword ] = useState('');
-    const [ isLogin, setIsLogin ] = useState(true);
+const client_id = '583451575044-i4kah52p22nlhsv1e6nstfknr1sa1qod.apps.googleusercontent.com';
 
-    const [ token, setToken ] = useCookies(['mr-token']);
+function Login(){
 
-    useEffect( () => {
-        if(token['mr-token']) window.location.href = '/home';
-    }, [token])
- 
-    const loginClicked = () => {
-        API.loginUser({username, password})
-           .then( resp => setToken('mr-token', resp.token))
-           .catch( error => console.log(error))
-    }
-    const registerClicked = () => {
-        API.registerUser({username, password})
-        .then( () => loginClicked())
-        .catch( error => console.log(error))
-    }
+    const [token, setToken ] = useCookies(['mr-token']);
+    const [errorMessage, setErrorMessage] = useState('');
+    const setReceivedToken = res =>{
+        if(res.hasOwnProperty('error')){
+            setErrorMessage(res.error);
+        }
+        else{
+            setToken('mr-token', res.token);
+            window.location.href = '/home';
+        }
+    };
 
-    return (
-            <div>
-                {console.log('richa')}
-                <Navbar/>
-                <div className="container jumbotron" style={{marginTop:'100px'}}>
+    const onSucces = (res) =>{
+        fetch('http://127.0.0.1:8000/api/logup', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                'token': `${res.tokenObj.id_token}`,
+            })
+            }).then( resp => resp.json()).then(res => setReceivedToken(res))
+            .catch( error => console.log(error))         
+    };
+    return(
+        <div>
 
-                    {isLogin ? <h1>Login</h1> : <h1>Register</h1>}
-
-                    <span>Username</span><br/>
-                        <input type="text" name="username" value={username} 
-                            onChange={evt=> setUsername(evt.target.value)} /><br/>
-                    <span>Password</span><br/>
-                        <input type="password" name="password" value={password} 
-                            onChange={evt=> setPassword(evt.target.value)} /><br/>
-                    {isLogin ? 
-                       <button onClick={loginClicked}>Login</button> : 
-                       <button onClick={registerClicked}>Register</button>
-                    }
-                    {isLogin ? 
-                       <p onClick={ () => setIsLogin(false) }>Don't have an account? Register here!</p> : 
-                       <p onClick={ () => setIsLogin(true) }>Already have an account? Login here!</p>
-                    }
-                </div>
+            <div className="jumbotron mb-5 bg-dark">
+                <h1 className="text-center text-light">SoChem Login</h1>
             </div>
-    )
+            <div className="container text-center border shadow p-5 mt-5">
+                <GoogleLogin
+                        clientId={client_id}
+                        buttonText="Login with Google"
+                        onSuccess={onSucces}
+                        id="google-login-button"
+                />
+                <h2 className="mt-5 text-secondary"><FontAwesome name="info-circle"/> Login only with your @itbhu.ac.in account.</h2>
+                <h3 className="text-danger mt-5">{errorMessage}</h3>
+            </div>
+        </div>
+    );
 }
-
-export default Auth;
+export default Login;

@@ -20,7 +20,7 @@ function AllComments(props){
 
     return (
         <div key={props.comment.id} id="allComments" className="mb-3">
-        {userDetails && userDetails.length && <img id="comment-user-image" src={"http://127.0.0.1:8000"+userDetails[0].profile_photo}/>}
+        {userDetails && userDetails.length && <img id="comment-user-image" src={userDetails[0].profile_photo}/>}
         <span className="text-secondary" style={{fontSize:20}}>{props.comment.author_name} | {props.comment.date}</span>
         <hr/>
         <h5 className="mt-3"><FontAwesome name="arrow-circle-right" className="mr-1"/>{props.comment.comment}</h5>

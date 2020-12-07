@@ -5,6 +5,9 @@ import { useCookies } from 'react-cookie';
 import Footer from './components/footer';
 import logo from './components/sochemlogo.png';
 import bg from './components/images/img3.jpg';
+import slide1 from './components/images/slide-home-1.jpg'
+import slide2 from './components/images/slide-home-2.jpg'
+import slide3 from './components/images/slide-home-3.jpg';
 import Navbar from './components/navbar';
 import { ListGroupItem } from 'react-bootstrap';
 
@@ -16,7 +19,7 @@ function App() {
   const [token, setToken] = useCookies(['mr-token']);
 
   useEffect(()=>{
-         
+    console.log(token['mr-token']);
     fetch('http://127.0.0.1:8000/api/forum-post/', {
         method: 'GET',
         headers: {
@@ -27,7 +30,7 @@ function App() {
           setPosts(res);
         })
       .catch( error => console.log(error));
-  })
+  },[])
   return (
     <div>
       <Navbar/>
@@ -80,6 +83,35 @@ function App() {
                 </div>
             </div>
           </div>
+      </div>
+      <hr/>
+      <div className="container d-none d-sm-block">
+      <div id="carouselExampleIndicators" class="carousel carousel-home slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100 carousel-img" src={slide3} alt="First slide"/>
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100 carousel-img" src={slide1} alt="Second slide"/>
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100 carousel-img" src={slide2} alt="Third slide"/>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
       </div>
       <Footer/>
 

@@ -125,7 +125,7 @@ function Profile(){
                     <div className="col-11 ml-0 col-md-4">
                         <div className="card border card-profile-main rounded p-3">
                             {userDetail ?
-                            <img className="card-img-top image-card-profile-main" src={"http://127.0.0.1:8000"+userDetail[0].profile_photo} alt="Card image cap"/>
+                            <img className="card-img-top image-card-profile-main" src={userDetail[0].profile_photo} alt="Card image cap"/>
                                 :null}
                                 <div className="card-body">
                                     <h3 className="card-title mb-4" id="profile-name">{user && user.first_name} {user && user.last_name}</h3>

@@ -25,7 +25,7 @@ function AllForumPosts(props){
                 <div className="jumbotron p-2 mb-1 mt-1" id="heading-forum-post">
                     <h3 className="text-light">{props.post.heading}</h3>
                     <span className="text-light">
-                        {userDetails && userDetails.length &&  <img id="comment-user-image" src={"http://127.0.0.1:8000"+userDetails[0].profile_photo}/>} 
+                        {userDetails && userDetails.length &&  <img id="comment-user-image" src={userDetails[0].profile_photo}/>} 
                         {props.user && props.post.author_name}
                     </span>
                     <span className="ml-5 text-light"><FontAwesome name="clock"/>{props.post.time}   {props.post.date}</span>

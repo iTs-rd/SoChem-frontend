@@ -24,7 +24,7 @@ function PeopleBlock(props){
         <div className="bg-light p-2">
             <h4>
             <div className="row">
-                <div className="col-md-4 col-12">{userDetails && userDetails.length && <img id="comment-user-image" src={"http://127.0.0.1:8000"+userDetails[0].profile_photo}/>}
+                <div className="col-md-4 col-12">{userDetails && userDetails.length && <img id="comment-user-image" src={userDetails[0].profile_photo}/>}
                 {props.user.first_name} {props.user.last_name}</div>
                 <div className="col-md-2 col-12 mt-4 mt-md-0">{userDetails && userDetails.length && userDetails[0].batch}</div>
                 <div className="col-md-5 col-12">{props.user.email}</div>

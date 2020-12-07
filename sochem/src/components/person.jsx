@@ -32,7 +32,7 @@ function Person(props){
     return(
         <div className="row">
             <div className="col-md-5 col-11 ml-0 ml-md-5" style={{marginTop:'auto'}}>
-                {userDetail && <img className="card-img-top image-card-profile-main" src={"http://127.0.0.1:8000"+userDetail[0].profile_photo} alt="Card image cap"/>}
+                {userDetail && <img className="card-img-top image-card-profile-main" src={userDetail[0].profile_photo} alt="Card image cap"/>}
             </div>
             <div className="col-md-6 col-8 text-left ml-0">
             <a href="#" className="d-md-inline d-none"><FontAwesome id="cross-person" style={{fontSize:'1.5rem'}} name="times-circle" onClick={() => props.setShowDetails(null)}/></a>
