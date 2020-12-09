@@ -9,28 +9,23 @@ var FontAwesome = require('react-fontawesome');
 
 
 function People(){
-    
-    const [users, setUsers] = useState([]);
+    const [family, setFamily] = useState([]);
     const [token, setToken] = useCookies();
     const [showDetails, setShowDetails] = useState(null);
     useEffect(() => {
-        fetch(`http://127.0.0.1:8000/api/users`, {
+        fetch(`http://127.0.0.1:8000/api/family`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Token ${token['mr-token']}`,
             }
-            }).then(res => res.json()).then(res => setUsers(res))
-            .catch( error => console.log(error))
-        
+            }).then(res => res.json()).then(res => setFamily(res))
+            .catch( error => console.log(error))    
     }, [])
-
-
 
     return (
         <div>
-            <Navbar/>
-            
+            <Navbar/>        
             <div className="jumbotron text-center cont-home-sochem" style={{marginTop:'95px'}}>
                     {showDetails ? <h1>{showDetails.first_name}'s Profile
                     <span className="ml-3 p-3 d-inline d-md-none"><a href="#"><FontAwesome  style={{fontSize:'1.5rem'}} name="times-circle" onClick={() =>setShowDetails(null)}/></a></span>
@@ -41,10 +36,19 @@ function People(){
             <div className="container">
                 {showDetails ? <Person userId={showDetails} setShowDetails={setShowDetails}/>:
                 <div>
-                {users.map((user, index) => {
+                {family.map((family, index) => {
                     return (
                         <div>
-                            <PeopleBlock user={user} setShowDetails={setShowDetails}/>
+                            {family.batch}
+                            {console.log(family.user_id)}
+                            {JSON.parse(family.user_id).map((id, index) => {
+                                return (
+                                    <div>
+                                        <PeopleBlock user_id={id} setShowDetails={setShowDetails}/>
+                                    </div>
+                                );
+                            })}
+
                         </div>
                     );
                 })}</div>}

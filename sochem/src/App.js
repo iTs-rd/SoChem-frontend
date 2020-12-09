@@ -42,11 +42,9 @@ function App() {
               <div className="col-12 col-md-8 mt-4 ml-3 ml-md-0">
                   <h4 id="about-sochem-home">
                     <FontAwesome name="quote-left" className="mr-3"/> 
-                          <span style={{fontSize:38}} className="text-light mr-2">The Society of Chemical Engineers</span> is simply dummy text of the printing and 
-                          typesetting industry. Lorem Ipsum has been the industry's 
-                          standard dummy text ever since the 1500s, when an unknown 
-                          printer took a galley of type and scrambled it to make a type
-                          specimen book. 
+                          <span style={{fontSize:38}} className="text-light mr-2">The Society of Chemical Engineers</span> 
+                          is a body which works towards providing a platform for students, 
+                          to improve on their technical skill and personal development.
                     <FontAwesome name="quote-right" className="ml-3"/>
                   </h4>
               </div>
