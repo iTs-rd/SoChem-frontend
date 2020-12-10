@@ -13,7 +13,7 @@ function Form(props){
         setBody(evt.target.value);
     }
     const submitClicked = () =>{
-        fetch('http://13.71.44.98/api/forum-post/', {
+        fetch('https://api.sochem.org/api/forum-post/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
