@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './forum-home.css';
 import API from '../api-service';
 import { useCookies } from 'react-cookie';
+import Moment from 'moment';
 var FontAwesome = require('react-fontawesome');
 
 
@@ -28,7 +29,7 @@ function AllForumPosts(props){
                         {userDetails && userDetails.length &&  <img id="comment-user-image" src={userDetails[0].profile_photo}/>} 
                         {props.user && props.post.author_name}
                     </span>
-                    <span className="ml-5 text-light"><FontAwesome name="clock"/>{props.post.time}   {props.post.date}</span>
+                    <span className="ml-5 text-light"> <FontAwesome name="clock"/> {Moment(props.post.date).format('hh:mm  DD-MM-YYYY')}</span>
                 </div>
                 <h4 className="jumbotron p-2 mb-2">
                     {props.post.body}

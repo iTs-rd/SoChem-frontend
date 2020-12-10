@@ -4,9 +4,11 @@ import Navbar from './navbar';
 import Comment from './forum-comment';
 import Footer from './footer';
 import EditBio from './edit-bio';
+import './auth.css';
 import '../components/profile.css';
 import {GoogleLogin} from 'react-google-login';
 var FontAwesome = require('react-fontawesome');
+
 
 const client_id = '583451575044-i4kah52p22nlhsv1e6nstfknr1sa1qod.apps.googleusercontent.com';
 
@@ -14,8 +16,10 @@ function Login(){
 
     const [token, setToken ] = useCookies(['mr-token']);
     const [errorMessage, setErrorMessage] = useState('');
+    const [showLoader, setShowLoader] = useState(false);
     const setReceivedToken = res =>{
         if(res.hasOwnProperty('error')){
+            setShowLoader(false);
             setErrorMessage(res.error);
         }
         else{
@@ -25,6 +29,7 @@ function Login(){
     };
 
     const onSucces = (res) =>{
+        setShowLoader(true);
         fetch('http://127.0.0.1:8000/api/logup', {
             method: 'POST',
             headers: {
@@ -38,8 +43,8 @@ function Login(){
     };
     return(
         <div>
-
-            <div className="jumbotron mb-5 bg-dark">
+            <Navbar/>
+            <div className="jumbotron mb-5 bg-dark" style={{marginTop:'95px'}}>
                 <h1 className="text-center text-light">SoChem Login</h1>
             </div>
             <div className="container text-center border shadow p-5 mt-5">
@@ -49,7 +54,8 @@ function Login(){
                         onSuccess={onSucces}
                         id="google-login-button"
                 />
-                <h2 className="mt-5 text-secondary"><FontAwesome name="info-circle"/> Login only with your @itbhu.ac.in account.</h2>
+                {showLoader && <div class="loader"></div>}
+                <h2 className="mt-5 text-secondary"><FontAwesome name="info-circle"/> Login only with your Institute account.</h2>
                 <h3 className="text-danger mt-5">{errorMessage}</h3>
             </div>
         </div>

@@ -56,8 +56,6 @@ function Navbar(){
                                         <a class="dropdown-item" onClick={logoutUser}>Logout</a>
                                     </div>
                                 </li>
-
-                               
                             }
                             </li>
                         </ul>

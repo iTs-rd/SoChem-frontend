@@ -4,10 +4,19 @@ import './App.css';
 import { useCookies } from 'react-cookie';
 import Footer from './components/footer';
 import logo from './components/sochemlogo.png';
+import Moment from 'moment';
 import bg from './components/images/img3.jpg';
 import slide1 from './components/images/slide-home-1.jpg'
 import slide2 from './components/images/slide-home-2.jpg'
 import slide3 from './components/images/slide-home-3.jpg';
+import slide4 from './components/images/slide-home-4.jpg';
+import slide5 from './components/images/slide-home-5.jpg';
+import slide6 from './components/images/slide-home-6.jpg';
+import slide7 from './components/images/slide-home-7.jpg';
+import slide8 from './components/images/slide-home-8.jpg';
+import slide9 from './components/images/slide-home-9.jpg';
+import slide10 from './components/images/slide-home-10.jpg';
+import slide11 from './components/images/slide-home-11.jpg';
 import Navbar from './components/navbar';
 import { ListGroupItem } from 'react-bootstrap';
 
@@ -19,17 +28,18 @@ function App() {
   const [token, setToken] = useCookies(['mr-token']);
 
   useEffect(()=>{
-    console.log(token['mr-token']);
-    fetch('http://127.0.0.1:8000/api/forum-post/', {
-        method: 'GET',
-        headers: {
-          'Authorization': `Token ${token['mr-token']}`
-        }
-      }).then( resp => resp.json())
-      .then( res => {
-          setPosts(res);
-        })
-      .catch( error => console.log(error));
+    if(token['mr-token']){
+      fetch('http://127.0.0.1:8000/api/forum-post/', {
+          method: 'GET',
+          headers: {
+            'Authorization': `Token ${token['mr-token']}`
+          }
+        }).then( resp => resp.json())
+        .then( res => {
+            setPosts(res);
+          })
+        .catch( error => console.log(error));
+    }
   },[])
   return (
     <div>
@@ -64,6 +74,7 @@ function App() {
                 <div className="rounded text-center p-1 mb-4" style={{backgroundColor:'black'}}>
                   <h4 className="text-light">Latest post from Forum</h4>
                 </div>
+                {token['mr-token'] ?
                 <div style={{fontSize:28}}>
                       {posts.map((post, index) => {
                           return (
@@ -74,13 +85,15 @@ function App() {
                                         <br/>
                                         <span  id="home-forum-name" className="text-secondary" style={{fontSize:22}}><FontAwesome name="user"/> {post.author_name}
                                         &nbsp;
-                                        | &nbsp; <FontAwesome name="clock"/> {post.date} {post.time}
+                                        | &nbsp; <FontAwesome name="clock"/> {Moment(post.date).format('hh:mm DD-MM-YYYY')}
                                         </span>
                                     </span> : null}
                               </div>
                           );
                       })}
                 </div>
+                :
+                <h4 className="text-secondary text-center">You need to login to view this section.</h4 >}
             </div>
           </div>
       </div>
@@ -101,6 +114,30 @@ function App() {
           </div>
           <div class="carousel-item">
             <img class="d-block w-100 carousel-img" src={slide2} alt="Third slide"/>
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100 carousel-img" src={slide4} alt="Third slide"/>
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100 carousel-img" src={slide5} alt="Third slide"/>
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100 carousel-img" src={slide6} alt="Third slide"/>
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100 carousel-img" src={slide7} alt="Third slide"/>
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100 carousel-img" src={slide8} alt="Third slide"/>
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100 carousel-img" src={slide9} alt="Third slide"/>
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100 carousel-img" src={slide10} alt="Third slide"/>
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100 carousel-img" src={slide11} alt="Third slide"/>
           </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

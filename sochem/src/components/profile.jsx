@@ -42,7 +42,6 @@ function Profile(){
     }
 
     const getUserDetail = () =>{
-        //console.log(user);
         if(userDetail==null && user){
             fetch(`http://127.0.0.1:8000/api/user-extension?id=${user.id}`, {
                 method: 'GET',
@@ -127,13 +126,13 @@ function Profile(){
                             {userDetail ?
                             <img className="card-img-top image-card-profile-main" src={userDetail[0].profile_photo} alt="Card image cap"/>
                                 :null}
-                                <div className="card-body">
-                                    <h3 className="card-title mb-4" id="profile-name">{user && user.first_name} {user && user.last_name}</h3>
+                                <div className="card-body p-0">
+                                    <h3 className="card-title mb-4 mt-3" id="profile-name">{user && user.first_name} {user && user.last_name}</h3>
                                     <h5><FontAwesome name="info-circle"/> {userDetail && userDetail[0].batch}</h5>
                                     <h5><FontAwesome name="at"/> {user && user.email}</h5>
                                     <hr></hr>
                                     {editBioBool == false &&
-                                    <p className="card-text"> <FontAwesome name="quote-left"/> {userDetail && userDetail[0].bio} <FontAwesome name="quote-right"/></p>
+                                    <h5 className="card-text"> <FontAwesome name="quote-left"/> {userDetail && userDetail[0].bio} <FontAwesome name="quote-right"/></h5>
                                     }
                                     {editBioBool == false && <span style={{fontSize:20}}><FontAwesome name="pen" onClick={toggleEditBio}/></span>}
                                     {editBioBool && <EditBio lastBio={userDetail[0].bio} cancelClicked={toggleEditBio} userDetail={userDetail} updateBio={updateBio}/>}

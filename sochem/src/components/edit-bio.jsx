@@ -11,6 +11,7 @@ function EditBio(props){
         setBody(evt.target.value);
     }
     const submitClicked = evt =>{
+        
         fetch(`http://127.0.0.1:8000/api/user-extension/${props.userDetail[0].id}/`, {
             method: 'PUT',
             headers: {
@@ -21,15 +22,15 @@ function EditBio(props){
                 'bio' : body,
                 'batch' : props.userDetail[0].batch,
                 'user' : props.userDetail[0].user,
+                'profile_photo' : props.userDetail[0].profile_photo
             })
             }).then( resp => resp.json())
             .catch( error => console.log(error))
             props.updateBio(body);
             props.cancelClicked();
-    }
+        }
     return(
         <div>
-            {console.log(props.userDetail)}
             <form>
                 <div className="form-group">
                     <textarea rows="6" type="text" value={body} className="form-control" id="body" onChange={bodyChaned}/>

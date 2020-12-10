@@ -39,7 +39,7 @@ function Anevent(props) {
                     </div>
                     </div>
                     <div className="col-12 mt-5">
-                       <h5>{props.event.description}</h5>
+                       <h5><div dangerouslySetInnerHTML={{ __html: props.event.description }}/></h5>
                     </div>
                 </div>
               </div>
