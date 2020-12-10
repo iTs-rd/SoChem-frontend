@@ -30,7 +30,7 @@ function Forum(){
             })
           .catch( error => console.log(error));
 
-          fetch('https://api.sochem.org//api/user-from-token/', {
+          fetch('https://api.sochem.org/api/user-from-token/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
