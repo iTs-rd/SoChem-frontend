@@ -13,7 +13,7 @@ function People(){
     const [token, setToken] = useCookies();
     const [showDetails, setShowDetails] = useState(null);
     useEffect(() => {
-        fetch(`http://127.0.0.1:8000/api/family`, {
+        fetch(`http://13.71.44.98/api/family`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -38,9 +38,8 @@ function People(){
                 <div>
                 {family.map((family, index) => {
                     return (
-                        <div>
-                            {family.batch}
-                            {console.log(family.user_id)}
+                        <div className="border p-4 m-3 bg-light">
+                            <h4 className="mb-4">{family.batch}</h4>
                             {JSON.parse(family.user_id).map((id, index) => {
                                 return (
                                     <div>

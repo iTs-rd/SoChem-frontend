@@ -19,7 +19,7 @@ function Forum(){
 
      useEffect(()=>{
          
-        fetch('http://127.0.0.1:8000/api/forum-post/', {
+        fetch('http://13.71.44.98/api/forum-post/', {
             method: 'GET',
             headers: {
               'Authorization': `Token ${token['mr-token']}`
@@ -30,7 +30,7 @@ function Forum(){
             })
           .catch( error => console.log(error));
 
-          fetch('http://127.0.0.1:8000/api/user-from-token/', {
+          fetch('http://13.71.44.98/api/user-from-token/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

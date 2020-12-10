@@ -10,7 +10,7 @@ function AllForumPosts(props){
 
     const [userDetails, setUserDetails] = useState(null);
      useEffect(() => {
-        fetch(`http://127.0.0.1:8000/api/user-extension?id=${props.post.author}`, {
+        fetch(`http://13.71.44.98/api/user-extension?id=${props.post.author}`, {
             method: 'GET',
             headers: {
               'Authorization': `Token ${props.token['mr-token']}`

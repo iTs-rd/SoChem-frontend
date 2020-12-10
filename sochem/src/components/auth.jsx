@@ -30,7 +30,7 @@ function Login(){
 
     const onSucces = (res) =>{
         setShowLoader(true);
-        fetch('http://127.0.0.1:8000/api/logup', {
+        fetch('http://13.71.44.98/api/logup', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

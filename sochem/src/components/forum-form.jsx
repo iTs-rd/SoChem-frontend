@@ -13,7 +13,7 @@ function Form(props){
         setBody(evt.target.value);
     }
     const submitClicked = () =>{
-        fetch('http://127.0.0.1:8000/api/forum-post/', {
+        fetch('http://13.71.44.98/api/forum-post/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

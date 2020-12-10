@@ -12,7 +12,7 @@ function Comment(props){
     const [token, setToken] = useCookies(['mr-token']);
     const [userDetails, setUserDetails] = useState(null);
     useEffect(()=>{
-        fetch(`http://127.0.0.1:8000/api/forum-comment?post_id=${props.postId}`, {
+        fetch(`http://13.71.44.98/api/forum-comment?post_id=${props.postId}`, {
             method: 'GET',
             headers: {
               'Authorization': `Token ${token['mr-token']}`
