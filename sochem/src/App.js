@@ -45,11 +45,11 @@ function App() {
     <div>
       <Navbar/>
       <div className="" style={{marginTop:95}}>
-          <div className="row p-2 cont-home-sochem">
+          <div className="row p-y-2 pl-2 cont-home-sochem">
               <div className="col-12 col-md-4 text-center">
                   <img src={logo} style={{width:200, height:200}}/>
               </div>
-              <div className="col-12 col-md-8 mt-4 ml-3 ml-md-0">
+              <div className="col-11 col-md-8 mt-4">
                   <h4 id="about-sochem-home">
                     <FontAwesome name="quote-left" className="mr-3"/> 
                           <span style={{fontSize:38}} className="text-light mr-2">The Society of Chemical Engineers</span> 
@@ -60,7 +60,7 @@ function App() {
               </div>
           </div> 
           <div className="jumbotron p-0 mt-1">
-              <img src={bg} className="top-image-home" />
+              <img src={bg} className="top-image-home img-responsive" />
           </div>
           <div className="row container d-flex justify-content-around ml-auto mr-auto border p-4 bg-light"> 
             <div className="col-11 col-md-4  border rounded shadow">

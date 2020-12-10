@@ -12,7 +12,7 @@ function EditBio(props){
     }
     const submitClicked = evt =>{
         
-        fetch(`http://13.71.44.98/api/user-extension/${props.userDetail[0].id}/`, {
+        fetch(`https://api.sochem.org/api/user-extension/${props.userDetail[0].id}/`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
