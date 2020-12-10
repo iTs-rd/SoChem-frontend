@@ -19,7 +19,7 @@ function Forum(){
 
      useEffect(()=>{
          
-        fetch('https://api.sochem.org//api/forum-post/', {
+        fetch('https://api.sochem.org/api/forum-post/', {
             method: 'GET',
             headers: {
               'Authorization': `Token ${token['mr-token']}`
