@@ -10,7 +10,7 @@ export default class API {
     }
 
     static registerUser(body) {
-        return fetch(`http://127.0.0.1:8000/api/users/`, {
+        return fetch(`https://api.sochem.org/api/users/`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -20,7 +20,7 @@ export default class API {
     }
 
     static getEvents(token) {
-        return fetch(`http://127.0.0.1:8000/api/events/`, {
+        return fetch(`https://api.sochem.org/api/events/`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -30,8 +30,7 @@ export default class API {
     }
 
     static newComment(body, token){
-        console.log(token['token']);
-        return fetch('http://127.0.0.1:8000/api/forum-comment/', {
+        return fetch('https://api.sochem.org/forum-comment/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -41,7 +40,7 @@ export default class API {
             }).then( resp => resp.json())
     }
     static getEvents(token) {
-        return fetch(`http://127.0.0.1:8000/api/events/`, {
+        return fetch(`https://api.sochem.org/api/events/`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',

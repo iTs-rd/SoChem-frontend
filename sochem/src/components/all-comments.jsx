@@ -9,7 +9,7 @@ function AllComments(props){
 
     const [userDetails, setUserDetails] = useState(null);
      useEffect(() => {
-        fetch(`http://13.71.44.98/api/user-extension?id=${props.comment.author}`, {
+        fetch(`https://api.sochem.org/api/user-extension?id=${props.comment.author}`, {
             method: 'GET',
             headers: {
               'Authorization': `Token ${props.token['mr-token']}`

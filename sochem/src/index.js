@@ -16,7 +16,7 @@ import People from './components/people';
 const routing = (
   <BrowserRouter>
     <CookiesProvider>
-      <Route exact path="/home" component={App}/>
+      <Route exact path="/" component={App}/>
       <Route exact path="/forum" component={Forum}/>
       <Route exact path="/login" component={Auth}/>
       <Route exact path="/cloud" component={Cloud}/>
