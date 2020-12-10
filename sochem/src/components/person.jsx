@@ -9,7 +9,7 @@ function Person(props){
     const [userDetail, setUserDetail] = useState(null);
     const [token, setToken] = useCookies(['mr-token']);
     useEffect(()=>{
-        fetch(`http://13.71.44.98/api/users/${props.userId.id}`, {
+        fetch(`https://api.sochem.org/api/users/${props.userId.id}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -20,7 +20,7 @@ function Person(props){
     },[])
 
     useEffect(()=>{
-        fetch(`http://13.71.44.98/api/user-extension?id=${props.userId.id}`, {
+        fetch(`https://api.sochem.org/api/user-extension?id=${props.userId.id}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -39,11 +39,11 @@ function Person(props){
                 {user && userDetail &&
                     <div class="card" style={{width:'auto'}}>
                     <div class="card-body">
-                        <h1 class="card-title">{user.first_name} {user.last_name}</h1>
+                        <h2 class="card-title">{user.first_name} {user.last_name}</h2>
                         <hr className="mb-5"/>
-                        <h3 class="card-text mt-4"><FontAwesome name="quote-left"/> {userDetail[0].bio} <FontAwesome name="quote-right"/></h3>
-                        <h3 class="mt-4 "><FontAwesome name="info"/> {userDetail[0].batch}</h3>
-                        <h3 class="mt-4 card-text."><FontAwesome name="at"/> {user.email}</h3>
+                        <h4 class="card-text mt-4"><FontAwesome name="quote-left"/> {userDetail[0].bio} <FontAwesome name="quote-right"/></h4>
+                        <h4 class="mt-4 "><FontAwesome name="info"/> {userDetail[0].batch}</h4>
+                        <h4 class="mt-4 card-text."><FontAwesome name="at"/> {user.email}</h4>
                     </div>
                     </div>
                 }

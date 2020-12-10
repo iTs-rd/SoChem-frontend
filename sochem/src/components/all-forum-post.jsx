@@ -10,7 +10,7 @@ function AllForumPosts(props){
 
     const [userDetails, setUserDetails] = useState(null);
      useEffect(() => {
-        fetch(`http://13.71.44.98/api/user-extension?id=${props.post.author}`, {
+        fetch(`https://api.sochem.org/api/user-extension?id=${props.post.author}`, {
             method: 'GET',
             headers: {
               'Authorization': `Token ${props.token['mr-token']}`
@@ -31,9 +31,9 @@ function AllForumPosts(props){
                     </span>
                     <span className="ml-5 text-light"> <FontAwesome name="clock"/> {Moment(props.post.date).format('hh:mm  DD-MM-YYYY')}</span>
                 </div>
-                <h4 className="jumbotron p-2 mb-2">
+                <h5 className="jumbotron p-2 mb-2">
                     {props.post.body}
-                </h4>
+                </h5>
             </div>
     );
 }
