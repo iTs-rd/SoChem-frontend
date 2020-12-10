@@ -20,14 +20,14 @@ function Navbar(){
     return (
             <div>
                 <nav className="navbar fixed-top navbar-expand-lg navbar-light">
-                    <a className="navbar-brand pl-4" id="nbrand" name="home" onClick={()=> {window.location='/home'}}><img id="sochem-logo" src={logo}/></a>
+                    <a className="navbar-brand pl-4" id="nbrand" name="home" onClick={()=> {window.location='/'}}><img id="sochem-logo" src={logo}/></a>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>                
                     </button>
                     <div className="collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav ml-auto">
                             <a className="nav-item" href="#">
-                                <a className="nav-link" name="home" onClick={()=> {window.location='/home'}}>Home</a>
+                                <a className="nav-link" name="home" onClick={()=> {window.location='/'}}>Home</a>
                             </a>
                             <a className="nav-item" href="#">
                                 <a className="nav-link" name="events" onClick={()=> {window.location='/events'}}>Events</a>
