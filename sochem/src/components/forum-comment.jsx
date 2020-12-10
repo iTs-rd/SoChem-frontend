@@ -23,7 +23,6 @@ function Comment(props){
     }, []);
 
     const newCommentChanged = evt =>{
-        console.log(evt.target.value);
         setNewComment(evt.target.value);
     }
     const postNewComment = () =>{

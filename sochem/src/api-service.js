@@ -1,6 +1,6 @@
 export default class API {
     static loginUser(body) {
-        return fetch(`http://127.0.0.1:8000/auth/`, {
+        return fetch(`https://api.sochem.org/api/auth/`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -30,7 +30,7 @@ export default class API {
     }
 
     static newComment(body, token){
-        return fetch('https://api.sochem.org/forum-comment/', {
+        return fetch('https://api.sochem.org/api/forum-comment/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
