@@ -22,7 +22,7 @@ function Profile(){
     const [commentCount, setCommentCount] = useState(0);
     const [editBioBool, setEditBioBool] = useState(false);
     useEffect(()=>{
-        fetch('http://13.71.44.98/api/user-from-token/', {
+        fetch('https://api.sochem.org/api/user-from-token/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -43,7 +43,7 @@ function Profile(){
 
     const getUserDetail = () =>{
         if(userDetail==null && user){
-            fetch(`http://13.71.44.98/api/user-extension?id=${user.id}`, {
+            fetch(`https://api.sochem.org/api/user-extension?id=${user.id}`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
@@ -56,7 +56,7 @@ function Profile(){
     const getAllForum = () =>{
         if(user && (gotAllForm == false)){
             gotAllForm = true;
-            fetch(`http://13.71.44.98/api/forum-post?id=${user.id}`, {
+            fetch(`https://api.sochem.org/api/forum-post?id=${user.id}`, {
                 method: 'GET',
                 headers: {
                   'Authorization': `Token ${token['mr-token']}`
@@ -71,7 +71,7 @@ function Profile(){
     const getCommentCount = () =>{
         if(user && (gotCommentCount==false)){
             gotCommentCount = true;
-            fetch(`http://13.71.44.98/api/total-comments?user_id=${user.id}`, {
+            fetch(`https://api.sochem.org/api/total-comments?user_id=${user.id}`, {
                 method: 'GET',
                 headers: {
                   'Authorization': `Token ${token['mr-token']}`
@@ -84,7 +84,7 @@ function Profile(){
     const getAllComment = () =>{
         if(user && (gotAllComment==false)){
             gotAllComment = true;
-            fetch(`http://13.71.44.98/api/forum-comment?user_id=${user.id}`, {
+            fetch(`https://api.sochem.org/api/forum-comment?user_id=${user.id}`, {
                 method: 'GET',
                 headers: {
                   'Authorization': `Token ${token['mr-token']}`

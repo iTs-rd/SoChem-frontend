@@ -24,13 +24,13 @@ function Login(){
         }
         else{
             setToken('mr-token', res.token);
-            window.location.href = '/home';
+            window.location.href = '/';
         }
     };
 
     const onSucces = (res) =>{
         setShowLoader(true);
-        fetch('http://13.71.44.98/api/logup', {
+        fetch('https://api.sochem.org/api/logup', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
