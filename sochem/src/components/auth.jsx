@@ -27,10 +27,13 @@ function Login(){
             window.location.href = '/';
         }
     };
+    const onFailure = res =>{
+	    console.log(res);
+    }
 
     const onSucces = (res) =>{
         setShowLoader(true);
-        fetch('http://13.71.44.98/api/logup', {
+        fetch('https://api.sochem.org/api/logup', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -52,6 +55,7 @@ function Login(){
                         clientId={client_id}
                         buttonText="Login with Google"
                         onSuccess={onSucces}
+	    		onFailure={onFailure}
                         id="google-login-button"
                 />
                 {showLoader && <div class="loader"></div>}
