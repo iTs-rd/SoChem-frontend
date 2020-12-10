@@ -31,8 +31,8 @@
 }
 
 .top-image-home{
-  height: 28rem;
-  width: auto;
+  height: 30rem;
+  object-fit:cover;
   width: 100%;
   border-radius: 0;
   margin: 0;
@@ -41,6 +41,9 @@
 .cont-home-sochem{  
   background-color: #1794d1;
   background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
+  width: 100%;
+  margin: 0;
+  padding: 1rem;
 }
 .carousel-home{
   height: 35rem;
