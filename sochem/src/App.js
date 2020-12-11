@@ -29,7 +29,7 @@ function App() {
 
   useEffect(()=>{
     if(token['mr-token']){
-      fetch('http://127.0.0.1:8000/api/forum-post/', {
+      fetch('https://api.sochem.org/api/forum-post/', {
           method: 'GET',
           headers: {
             'Authorization': `Token ${token['mr-token']}`
