@@ -22,7 +22,6 @@ function AllForumPosts(props){
 
     return (
             <div>
-                {console.log(userDetails)}
                 <div className="jumbotron p-2 mb-1 mt-1" id="heading-forum-post">
                     <h3 className="text-light">{props.post.heading}</h3>
                     <span className="text-light">
