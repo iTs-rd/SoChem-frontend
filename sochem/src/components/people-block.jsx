@@ -38,7 +38,7 @@ function PeopleBlock(props){
                 <div className="col-md-4 col-12">{userDetails && userDetails.length && <img id="comment-user-image" src={userDetails[0].profile_photo}/>}
                 {user.first_name} {user.last_name}</div>
                 <div className="col-md-2 col-12 mt-4 mt-md-0">{userDetails && userDetails.length && userDetails[0].batch}</div>
-                <div className="col-md-5 col-12">{user.email}</div>
+                <span className="col-md-5 col-12">{user.email}</span>
                 <div className="col-md-1 col-12"><a onClick={() => props.setShowDetails(user)} href="#" ><FontAwesome name="link"/></a></div>
             </div>
             </h4>
