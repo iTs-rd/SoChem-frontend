@@ -45,7 +45,7 @@ function App() {
     <div>
       <Navbar/>
       <div className="" style={{marginTop:95}}>
-          <div className="row p-y-2 pl-2 cont-home-sochem">
+          <div className="row p-y-2 pl-2 cont-home-sochem-jb">
               <div className="col-12 col-md-4 text-center">
                   <img src={logo} style={{width:200, height:200}}/>
               </div>
@@ -79,7 +79,7 @@ function App() {
                               <div className="alternate-bgcolor">
                                   {index<=5 ? 
                                     <span>
-                                        <FontAwesome name="comment"/> {post.heading}
+                                        <span style={{fontSize:'1.5rem'}}><FontAwesome name="comment"/> {post.heading}</span>
                                         <br/>
                                         <span  id="home-forum-name" className="text-secondary" style={{fontSize:20}}><FontAwesome name="user"/> {post.author_name}
                                         &nbsp;
