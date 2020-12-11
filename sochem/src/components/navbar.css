@@ -2,10 +2,13 @@
 
 .navbar {
     font-family: 'Karla', sans-serif;
-    min-height: 50px;
-    background-color: white;
-    font-size: 1.6rem;
+    background-color: #ffffff;
+background-image: url("https://www.transparenttextures.com/patterns/beige-paper.png");
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+    font-size: 1.5rem;
     font-weight: 900;
+    margin: 0;
+    padding: 0.5rem;
 }
 
 .nav-item {
