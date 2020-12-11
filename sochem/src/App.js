@@ -81,7 +81,7 @@ function App() {
                                     <span>
                                         <FontAwesome name="comment"/> {post.heading}
                                         <br/>
-                                        <span  id="home-forum-name" className="text-secondary" style={{fontSize:22}}><FontAwesome name="user"/> {post.author_name}
+                                        <span  id="home-forum-name" className="text-secondary" style={{fontSize:20}}><FontAwesome name="user"/> {post.author_name}
                                         &nbsp;
                                         | &nbsp; <FontAwesome name="clock"/> {Moment(post.date).format('hh:mm DD-MM-YYYY')}
                                         </span>

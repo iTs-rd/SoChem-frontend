@@ -31,9 +31,9 @@ function AllForumPosts(props){
                     </span>
                     <span className="ml-5 text-light"> <FontAwesome name="clock"/> {Moment(props.post.date).format('hh:mm  DD-MM-YYYY')}</span>
                 </div>
-                <h4 className="jumbotron p-2 mb-2">
+                <h5 className="jumbotron p-2 mb-2">
                     {props.post.body}
-                </h4>
+                </h5>
             </div>
     );
 }
