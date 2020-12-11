@@ -45,7 +45,7 @@ function App() {
     <div>
       <Navbar/>
       <div className="" style={{marginTop:95}}>
-          <div className="row p-y-2 pl-2 cont-home-sochem">
+          <div className="row p-y-2 pl-2 cont-home-sochem-jb">
               <div className="col-12 col-md-4 text-center">
                   <img src={logo} style={{width:200, height:200}}/>
               </div>
