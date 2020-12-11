@@ -79,7 +79,7 @@ function App() {
                               <div className="alternate-bgcolor">
                                   {index<=5 ? 
                                     <span>
-                                        <FontAwesome name="comment"/> {post.heading}
+                                        <span style={{fontSize:'1.5rem'}}><FontAwesome name="comment"/> {post.heading}</span>
                                         <br/>
                                         <span  id="home-forum-name" className="text-secondary" style={{fontSize:20}}><FontAwesome name="user"/> {post.author_name}
                                         &nbsp;
