@@ -33,7 +33,7 @@ function PeopleBlock(props){
 
     return(
         <div className="bg-light p-2">
-            <h4>
+            <h5>
             <div className="row">
                 <div className="col-md-4 col-12">{userDetails && userDetails.length && <img id="comment-user-image" src={userDetails[0].profile_photo}/>}
                 {user.first_name} {user.last_name}</div>
@@ -41,7 +41,7 @@ function PeopleBlock(props){
                 <span className="col-md-5 col-12">{user.email}</span>
                 <div className="col-md-1 col-12"><a onClick={() => props.setShowDetails(user)} href="#" ><FontAwesome name="link"/></a></div>
             </div>
-            </h4>
+            </h5>
             <hr/>
         </div>
     );
