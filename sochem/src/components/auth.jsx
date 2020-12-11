@@ -47,7 +47,7 @@ function Login(){
     return(
         <div>
             <Navbar/>
-            <div className="jumbotron mb-5 bg-dark" style={{marginTop:'95px'}}>
+            <div className="jumbotron mb-5 bg-dark" style={{marginTop:'70px'}}>
                 <h1 className="text-center text-light">SoChem Login</h1>
             </div>
             <div className="container text-center border shadow p-5 mt-5">

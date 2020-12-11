@@ -14,7 +14,7 @@ function Anevent(props) {
 
               <div class="container">
                 <div class="row">
-                    <div className="col-12">
+                    <div className="col-10">
                     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
                         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
