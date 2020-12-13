@@ -6,3 +6,19 @@ img{
     border-radius: 0.5rem;
 }
 
+.event-title-all{
+    font-size: 2.5rem;
+}
+
+@media screen and (max-width: 600px) {
+    .event-title-all{
+        font-size: 25px;
+    }
+    .event-info-all{
+        font-size: 18px;
+    }
+    .event-body-an{
+        font-size: 15px;
+    }
+  }
+
