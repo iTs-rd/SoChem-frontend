@@ -6,15 +6,15 @@ function Anevent(props) {
     return (
         <div>
             <div className="container-fluid jumbotron pt-4">
-              <h1>{props.event.title}</h1>
+              <h1 className="event-title-all">{props.event.title}</h1>
               <hr></hr>
-              <h4><FontAwesome name="map"/> {props.event.venue} &nbsp;
+              <h4 className="event-info-all"><FontAwesome name="map"/> {props.event.venue} &nbsp;
               <FontAwesome name="calendar"/> {props.event.date}</h4>
               <br/>
 
               <div class="container">
                 <div class="row">
-                    <div className="col-10">
+                    <div className="col-12">
                     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
                         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -43,7 +43,7 @@ function Anevent(props) {
                     </div>
                     </div>
                     <div className="col-12 mt-5">
-                       <h5><div dangerouslySetInnerHTML={{ __html: props.event.description }}/></h5>
+                       <h5 className="event-body-an"><div dangerouslySetInnerHTML={{ __html: props.event.description }}/></h5>
                     </div>
                 </div>
               </div>

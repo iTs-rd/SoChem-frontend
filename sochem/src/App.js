@@ -63,12 +63,12 @@ function App() {
               <img src={bg} className="top-image-home img-responsive" />
           </div>
           <div className="row container d-flex justify-content-around ml-auto mr-auto border p-4 bg-light"> 
-            <div className="col-11 col-md-4  border rounded shadow">
+            <div className="col-11 col-md-5  border rounded shadow">
                 <div className="rounded text-center p-1 m-0" style={{backgroundColor:'black'}}>
                   <h4 className="text-light">Updates</h4>
                 </div>
             </div>
-            <div className="col-11 col-md-7  ml-0 ml-md-4 border rounded mt-3 mt-md-0 shadow">
+            <div className="col-11 col-md-6  ml-0 ml-md-4 border rounded mt-3 mt-md-0 shadow">
                 <div className="rounded text-center p-1 mb-4" style={{backgroundColor:'black'}}>
                   <h4 className="text-light">Latest post from Forum</h4>
                 </div>
