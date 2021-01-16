@@ -46,11 +46,11 @@ function Anevent(props) {
                     }
                     <div className="col-12 mt-5">
                        <h5 className="event-body-an"><div dangerouslySetInnerHTML={{ __html: props.event.description }}/></h5>
+                       <h6>{props.event.file1 &&
+                                <a href={props.event.file1}>Download</a>
+                        }</h6>
                     </div>
                     <hr></hr>
-                    {props.evemt.file1 &&
-                        <a href={props.event.file1}>Download</a>
-                    }
                 </div>
               </div>
 

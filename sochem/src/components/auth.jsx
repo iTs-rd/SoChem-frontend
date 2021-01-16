@@ -27,6 +27,9 @@ function Login(){
             window.location.href = '/';
         }
     };
+    const onFailure = res =>{
+	    console.log(res);
+    }
 
     const onSucces = (res) =>{
         setShowLoader(true);
@@ -52,6 +55,7 @@ function Login(){
                         clientId={client_id}
                         buttonText="Login with Google"
                         onSuccess={onSucces}
+	    		onFailure={onFailure}
                         id="google-login-button"
                 />
                 {showLoader && <div class="loader"></div>}
