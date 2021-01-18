@@ -9,7 +9,7 @@ function Allevents(props) {
         <div>
             {props.eventlist.map( (evt, index) => {
                 return (
-                     <div className="container jumbotron box p-0">
+                     <div className="container jumbotron box p-0" onClick={ () => {props.eventSelected(evt.id)}}>
                             <div className="row">
                                 <div className="col-12 col-md-6">
                                     <img src={evt.cover1} class="img-fluid"></img>

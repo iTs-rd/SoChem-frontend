@@ -11,7 +11,7 @@ img{
 }
 .img-events-cov{
     height: 500px;
-    width: 300px;
+    width: auto;
 }
 @media screen and (max-width: 600px) {
     .event-title-all{

@@ -28,7 +28,7 @@ function Events() {
         if(!token['mr-token']) window.location.href = '/login';
         {allEvents()}
     },[token])
-
+    
     return (
         <div>
             <Navbar/>
@@ -52,7 +52,7 @@ function Events() {
                         );
                     })
                 :
-                <Allevents eventlist={eventlist}/>
+                <Allevents eventlist={eventlist} eventSelected={eventSelected}/>
                 }
             </div>
         </div>

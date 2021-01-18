@@ -67,6 +67,7 @@ function App() {
                 <div className="rounded text-center p-1 m-0" style={{backgroundColor:'black'}}>
                   <h4 className="text-light">Updates</h4>
                 </div>
+                <ul><li><h5 className="mt-4">Case Study PS out. Check Events section.</h5></li></ul>
             </div>
             <div className="col-11 col-md-6  ml-0 ml-md-4 border rounded mt-3 mt-md-0 shadow">
                 <div className="rounded text-center p-1 mb-4" style={{backgroundColor:'black'}}>

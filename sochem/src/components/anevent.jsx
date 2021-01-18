@@ -24,12 +24,12 @@ function Anevent(props) {
                             }
                         </ol>
                         <div class="carousel-inner">
-                            <div class="carousel-item active">
-                            <img src={props.event.cover1} class="d-block w-100 img-events-cov"  alt="..."/>
+                            <div class="carousel-item active text-center">
+                            <img src={props.event.cover1} class="img-fluid img-events-cov"  alt="..."/>
                             </div>
                             {props.event.cover2 &&
-                            <div class="carousel-item">
-                            <img src={props.event.cover2} class="d-block w-100s img-events-cov" alt="..."/>
+                            <div class="carousel-item text-center">
+                            <img src={props.event.cover2} class="img-fluid img-events-cov" alt="..."/>
                             </div>
                             }
                         </div>
@@ -47,7 +47,7 @@ function Anevent(props) {
                     <div className="col-12 mt-5">
                        <h5 className="event-body-an"><div dangerouslySetInnerHTML={{ __html: props.event.description }}/></h5>
                        <h6>{props.event.file1 &&
-                                <a href={props.event.file1}>Download</a>
+                                <a href={props.event.file1}>Download PS</a>
                         }</h6>
                     </div>
                     <hr></hr>
