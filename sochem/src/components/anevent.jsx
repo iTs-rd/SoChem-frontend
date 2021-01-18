@@ -25,11 +25,11 @@ function Anevent(props) {
                         </ol>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                            <img src={props.event.cover1} class="d-block w-100" alt="..."/>
+                            <img src={props.event.cover1} class="d-block w-100 img-events-cov"  alt="..."/>
                             </div>
                             {props.event.cover2 &&
                             <div class="carousel-item">
-                            <img src={props.event.cover2} class="d-block w-100" alt="..."/>
+                            <img src={props.event.cover2} class="d-block w-100s img-events-cov" alt="..."/>
                             </div>
                             }
                         </div>
