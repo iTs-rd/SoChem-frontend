@@ -5,7 +5,7 @@ import { useCookies } from 'react-cookie';
 import Footer from './components/footer';
 import logo from './components/sochemlogo.png';
 import Moment from 'moment';
-import bg from './components/images/img3.jpg';
+import bg from './components/images/image.jpg';
 import slide1 from './components/images/slide-home-1.jpg'
 import slide2 from './components/images/slide-home-2.jpg'
 import slide3 from './components/images/slide-home-3.jpg';
@@ -18,7 +18,9 @@ import slide9 from './components/images/slide-home-9.jpg';
 import slide10 from './components/images/slide-home-10.jpg';
 import slide11 from './components/images/slide-home-11.jpg';
 import Navbar from './components/navbar';
+import Header from './components/header';
 import { ListGroupItem } from 'react-bootstrap';
+import Testimonials from './components/testimonials';
 
 var FontAwesome = require('react-fontawesome');
 
@@ -44,43 +46,31 @@ function App() {
   return (
     <div>
       <Navbar/>
-      <div className="" style={{marginTop:'70px'}}>
-          <div className="row p-y-2 pl-2 cont-home-sochem-jb">
-              <div className="col-12 col-md-4 text-center">
-                  <img src={logo} style={{width:200, height:200}}/>
-              </div>
-              <div className="col-11 col-md-8 mt-4">
-                  <h4 id="about-sochem-home">
-                    <FontAwesome name="quote-left" className="mr-3"/> 
-                          <span style={{fontSize:38}} className="text-light mr-2">The Society of Chemical Engineers</span> 
-                          is a body which works towards providing a platform for students, 
-                          to improve on their technical skill and personal development.
-                    <FontAwesome name="quote-right" className="ml-3"/>
-                  </h4>
-              </div>
-          </div> 
-          <div className="jumbotron p-0 mt-1">
-              <img src={bg} className="top-image-home img-responsive" />
-          </div>
-          <div className="row container d-flex justify-content-around ml-auto mr-auto border p-4 bg-light"> 
-            <div className="col-11 col-md-5  border rounded shadow">
+      <div>
+          <Header/>
+
+          <div className="row container d-flex justify-content-around ml-auto mr-auto border bg-light pb-5"> 
+            <div className="col-12 col-md-5  border rounded shadow px-4">
                 <div className="rounded text-center p-1 m-0" style={{backgroundColor:'black'}}>
-                  <h4 className="text-light">Updates</h4>
-                </div>
-                <ul><li><h5 className="mt-4">Case Study PS out. Check Events section.</h5></li></ul>
-            </div>
-            <div className="col-11 col-md-6  ml-0 ml-md-4 border rounded mt-3 mt-md-0 shadow">
-                <div className="rounded text-center p-1 mb-4" style={{backgroundColor:'black'}}>
-                  <h4 className="text-light">Latest post from Forum</h4>
+                  <h4 className="text-light home-updates-forum">Updates</h4>
                 </div>
                 {token['mr-token'] ?
-                <div style={{fontSize:28}}>
+                <div>
+                <ul><li><h5 className="mx-2 my-4">Case Study PS out. Check Events section.</h5></li></ul>
+                </div> : <h4 className="text-secondary text-center mt-3">Login to view this section.</h4 >}
+            </div>
+            <div className="col-12 col-md-6 border rounded mt-3 mt-md-0 shadow px-4">
+                <div className="rounded text-center p-1 mb-4" style={{backgroundColor:'black'}}>
+                  <h4 className="text-light home-updates-forum">Latest post from Forum</h4>
+                </div>
+                {token['mr-token'] ?
+                <div style={{fontSize:'1rem'}}>
                       {posts.map((post, index) => {
                           return (
-                              <div className="alternate-bgcolor">
+                              <div className="alternate-bgcolor" className="m-4">
                                   {index<=5 ? 
                                     <span>
-                                        <span style={{fontSize:'1.5rem'}}><FontAwesome name="comment"/> {post.heading}</span>
+                                        <a onClick={() =>  window.location ='/forum'} href="#" style={{fontSize:'1.5rem'}}><FontAwesome name="comment"/> {post.heading}</a>
                                         <br/>
                                         <span  id="home-forum-name" className="text-secondary" style={{fontSize:20}}><FontAwesome name="user"/> {post.author_name}
                                         &nbsp;
@@ -92,11 +82,36 @@ function App() {
                       })}
                 </div>
                 :
-                <h4 className="text-secondary text-center">You need to login to view this section.</h4 >}
+                <h4 className="text-secondary text-center m-3">You need to login to view this section.</h4 >}
             </div>
           </div>
       </div>
-      <hr/>
+      <div className="container text-center about-us-div">
+              <h2 className="about-us">About Us</h2>
+              <p className="home-about-text">
+              The Society of Chemical Engineers a.k.a SoChem is a society run by the students of the department for the students of the department.
+               Anyone who wishes to be involved with the department is welcome to join the society. 
+               SoChem ensures that each and every student within the department gets the most out of their time with us at IIT(BHU) Varanasi.
+                      <br></br>
+              From fancy festival dinners, important job finding, and everything in-between, SoChem is there to give a helping hand. 
+              As a society, we are incredibly active with respect to social skill development and industrial exposure.
+                      <br></br>
+                  <br></br>
+              Name the festival, we host a celebratory event for it! 
+              It is the perfect opportunity to celebrate with your friends! This provides for a chance to mingle with representatives 
+              across all the years within the department. These events are a chance for you to do some networking and have fun. 
+              <br></br>
+              <br></br>
+              The department as a whole has strong links with various industries in the engineering and financial sectors.
+              The society organizes presentations from company representatives and application days, held within the department
+              itself, directly aimed at chemical engineering students.
+                      <br></br>
+                In addition to all the events, we host many sessions for students of all years (Bachelor's to PhD) to equip them with the
+                 skills necessary to climb the ladder in whichever domain they wish to excel in. 
+
+              </p>
+          </div>
+      <Testimonials/>
       <div className="container d-none d-sm-block">
       <div id="carouselExampleIndicators" class="carousel carousel-home slide" data-ride="carousel">
           <ol class="carousel-indicators">

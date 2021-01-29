@@ -23,16 +23,16 @@ function AllForumPosts(props){
     return (
             <div>
                 <div className="jumbotron p-2 mb-1 mt-1" id="heading-forum-post">
-                    <h3 className="text-light">{props.post.heading}</h3>
+                    <div className="text-light" style={{fontSize:'1.5rem'}}>{props.post.heading}</div>
                     <span className="text-light">
                         {userDetails && userDetails.length &&  <img id="comment-user-image" src={userDetails[0].profile_photo}/>} 
                         {props.user && props.post.author_name}
                     </span>
                     <span className="ml-5 text-light"> <FontAwesome name="clock"/> {Moment(props.post.date).format('hh:mm  DD-MM-YYYY')}</span>
                 </div>
-                <h5 className="jumbotron p-2 mb-2">
-                    {props.post.body}
-                </h5>
+                <div className="jumbotron p-2 mb-2 all-forum-post-text">
+                    <span dangerouslySetInnerHTML={{ __html: props.post.body }} />
+                </div>
             </div>
     );
 }

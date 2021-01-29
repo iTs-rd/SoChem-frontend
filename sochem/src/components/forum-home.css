@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Rubik');
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans:display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
 
 #heading-forum-post{
     background-color: #2e66a5;
-    font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 800;
 }
 
 #newComment{
@@ -32,6 +34,7 @@ body{
     text-align: center;
     font-family: 'Rubik', sans-serif;
     font-size: 3rem;
+    color: white;
 }
 
 #sochem-logo{
@@ -141,6 +144,7 @@ a{
 /*Footer*/
 .site-footer
 {
+  font-family: 'Noto Sans KR', sans-serif;
   background-color:#26272b;
   padding:25px 0 10px;
   font-size:15px;
@@ -314,4 +318,10 @@ a{
   position: absolute;
   right: 0;
   top: 0;
+}
+
+.all-forum-post-text{
+  font-size: 1.1rem;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
 }

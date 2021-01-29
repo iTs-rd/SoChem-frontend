@@ -27,19 +27,19 @@ function Navbar(){
                     <div className="collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav ml-auto">
                             <a className="nav-item" href="#">
-                                <a className="nav-link" name="home" onClick={()=> {window.location='/'}}>Home</a>
+                                <a className="nav-link" name="home" onClick={()=> {window.location='/'}}>HOME</a>
                             </a>
                             <a className="nav-item" href="#">
-                                <a className="nav-link" name="events" onClick={()=> {window.location='/events'}}>Events</a>
+                                <a className="nav-link" name="events" onClick={()=> {window.location='/events'}}>EVENTS</a>
                             </a>
                             <a className="nav-item" href="#">
-                                <a className="nav-link" name="forum" onClick={()=> {window.location='/forum'}}>Forum</a>
+                                <a className="nav-link" name="forum" onClick={()=> {window.location='/forum'}}>FORUM</a>
                             </a>
                             <a className="nav-item" href="#">
-                                <a className="nav-link" name="cloud" onClick={()=> {window.location='/cloud'}}>Cloud</a>
+                                <a className="nav-link" name="cloud" onClick={()=> {window.location='/cloud'}}>CLOUD</a>
                             </a>
                             <a className="nav-item" href="#">
-                                <a className="nav-link" name="people" onClick={()=> {window.location='/people'}}>People</a>
+                                <a className="nav-link" name="people" onClick={()=> {window.location='/people'}}>PEOPLE</a>
                             </a>
                         </ul>
                         

@@ -26,7 +26,7 @@ function Cloud(){
             <div className="jumbotron cont-home-sochem" style={{background:'#dbdbdb'},{marginTop:'70px'}}>
                 <h1 className="jumbotron-heading-top">SoChem Cloud</h1>
             </div>
-            <div className="container text-center">
+            <div className="container text-center bg-light p-3">
                     <a href="https://drive.google.com/drive/u/5/folders/15iEbYDjKoCVh-AmlbUN0-3YZiKoCG1gr">
                             <div class="card">
                             <img class="card-img-top" src={books} alt="Card image cap"/>

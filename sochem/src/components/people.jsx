@@ -26,7 +26,7 @@ function People(){
     return (
         <div>
             <Navbar/>        
-            <div className="jumbotron text-center cont-home-sochem" style={{marginTop:'70px'}}>
+            <div className="jumbotron text-center cont-home-sochem text-light">
                     {showDetails ? <h1>{showDetails.first_name}'s Profile
                     <span className="ml-3 p-3 d-inline d-md-none"><a href="#"><FontAwesome  style={{fontSize:'1.5rem'}} name="times-circle" onClick={() =>setShowDetails(null)}/></a></span>
                     </h1>

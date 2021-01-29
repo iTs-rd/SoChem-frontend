@@ -1,62 +1,89 @@
-@import url('https://fonts.googleapis.com/css2?family=Cabin&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@500&display=swap');.App {
-  text-align: center;
-}
+  @import url('https://fonts.googleapis.com/css2?family=Cabin&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@500&display=swap');.App {
+    text-align: center;
+  }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+  .App-header {
+    background-color: #174270;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
 
-.sochem {
-  margin-top: 100px;
-}
+  .jumbotorn{
+    height: 25rem;
+  }
+  .about-us{
+    font-family: 'Ubuntu', sans-serif;
+    margin: 2rem;
+  }
+  .sochem {
+    margin-top: 100px;
+  }
 
-#about-sochem-home{
-  font-family: 'Cabin', sans-serif;
-}
+  .alternate-bgcolor:nth-of-type(even) {
+    background: #E6F0F2
+  }
+  .home-lower-text{
+    color: white;
+    height: 25rem;
+    text-align: center;
+  }
 
-.alternate-bgcolor:nth-of-type(even) {
-  background: #E6F0F2
-}
+  #home-forum-name{
+    font-family: 'Tajawal', sans-serif;
+  }
 
-#home-forum-name{
-  font-family: 'Tajawal', sans-serif;
-}
+  .top-image-home{
+    height: 30rem;
+    object-fit:cover;
+    width: 100%;
+    border-radius: 0;
+    margin: 0;
+  }
 
-.top-image-home{
-  height: 30rem;
-  object-fit:cover;
-  width: 100%;
-  border-radius: 0;
-  margin: 0;
-}
+ a:hover{
+   color: #38393a;
+   text-decoration: none;
+ }
+  .cont-home-sochem{  
+    background-color: black;
+    background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
+    width: 100%;
+    margin-top: 4rem;
+    margin: 0;
+    margin-bottom: 3rem;
+    border-radius: 0;
+  }
 
-.cont-home-sochem{  
-  background-color: #1794d1;
-  background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
-  width: 100%;
-  margin-top: 0;
-  margin: 0;
-  margin-bottom: 3rem;
-}
-.cont-home-sochem-jb{  
-  background-color: #1794d1;
-  background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
-  width: 100%;
-  margin: 0;
-  padding: 1rem;
-}
-.carousel-home{
-  height: 35rem;
-  margin-top: 1rem;
-}
-.carousel-img{
-  height: 35rem;
-}
+  .carousel-home{
+    height: 35rem;
+    margin-top: 1rem;
+    width: auto;
+  }
+  .carousel-img{
+    height: 35rem;
+    width: auto;
+  }
+
+  .about-us-div{
+    margin-top: 5rem;
+    padding: 2rem;
+  }
+
+  .home-updates-forum{
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 1px;
+  }
+
+  .home-about-text{
+    font-family: 'Montserrat', sans-serif;
+    opacity: 80%;
+  }
