@@ -31,15 +31,17 @@ function Person(props){
             .catch( error => console.log(error)) 
     }, [user])
     return(
-        <div className="row">
-            <button style={{width:"100%"}} onClick={() => props.setShowDetails(null)} className="btn btn-secondary p-3">Back</button>
-            <div className="col-md-5 col-11 ml-0 ml-md-5" style={{marginTop:'auto'}}>
+        <div className="row mb-5 bg-light">
+            <button style={{width:"100%"}} onClick={() => props.setShowDetails(null)} className="btn btn-secondary p-3 mb-5">
+               <h4><FontAwesome name="chevron-left"/></h4> 
+            </button>
+            <div className="col-md-5 col-11 ml-0 ml-md-5 text-center">
                 {userDetail && <img className="card-img-top image-card-profile-main" src={userDetail[0].profile_photo} alt="Card image cap"/>}
             </div>
-            <div className="col-md-6 col-8 text-left ml-0">
+            <div className="col-md-6 col-8 text-center ml-0">
             {/* <a href="#" className="d-md-inline d-none"><FontAwesome style={{fontSize:'1.5rem'}} name="times-circle" /></a> */}
                 {user && userDetail &&
-                    <div class=" card person-card bg-light">
+                    <div class=" card person-card bg-light text-left">
                     <div class="card-body" style={{backgroundColor:'none'}}>
                         <h2 class="card-title" id="person-card-text">{user.first_name} {user.last_name}</h2>
                         <hr className="mb-5"/>

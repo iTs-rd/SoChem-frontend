@@ -136,9 +136,9 @@ a{
 
 .image-card-profile-main{
     border-radius: 100%;
-    width: 20rem;
+    width: 13rem;
     height: auto;
-    
+    margin-bottom: 1rem;
 }
 #profile-comment-all:nth-of-type(odd){
     background-color: #E9ECEF;

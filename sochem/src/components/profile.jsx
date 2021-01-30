@@ -168,11 +168,11 @@ function Profile(){
                                                             <h4 className="text-light">{post.heading}</h4>
                                                         </div>
                                                         <h5 className="jumbotron p-2 mb-2">
-                                                                {post.body}
+                                                        <span dangerouslySetInnerHTML={{ __html: post.body }} />
                                                         </h5>
                                                         <span className="mb-5">
                                                         <h3 className="text-warning" onClick={()=>toggleComment(post.id)}><FontAwesome name="comment"/>
-                                                        <span className="ml-2 text-dark">{showComment==post.id ? <FontAwesome name="arrow-up"/> : <FontAwesome name="arrow-down"/>}</span>
+                                                        <a href="#" className="ml-2 text-dark">{showComment==post.id ? <FontAwesome name="arrow-up"/> : <FontAwesome name="arrow-down"/>}</a>
                                                         </h3>
                                                         
                                                         {showComment==post.id ? <Comment postId={post.id} user={user} allAdd={false}/> : null}
