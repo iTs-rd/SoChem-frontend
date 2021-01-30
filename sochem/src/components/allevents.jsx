@@ -6,21 +6,21 @@ var FontAwesome = require('react-fontawesome');
 function Allevents(props) {
 
     return (
-        <div>
+        <div className="row mt-5 p-3">
             {props.eventlist.map( (evt, index) => {
                 return (
-                     <div className="container jumbotron box p-0" onClick={ () => {props.eventSelected(evt.id)}}>
-                            <div className="row">
-                                <div className="col-12 col-md-6">
+                     <a href="#" onClick={ () => {props.eventSelected(evt.id)}} className="col-12 col-sm-6 col-md-4 mb-5 bg-light p-4 zoom">
+                            <span>
+                                <span>
                                     <img src={evt.cover1} class="img-fluid"></img>
-                                </div>
-                                <div className="col-12 col-md-6">
-                                    <h2 className="mb-2 mb-md-5 mt-3 ml-2 event-title-all">{evt.title}</h2>
-                                    <h4 className="mt-0 mt-md-5 ml-2 event-info-all"><FontAwesome name="map-marker"/> {evt.venue}</h4>
-                                    <h4 className="event-info-all"><FontAwesome name="calendar" className="ml-2"/> {evt.date}</h4>
-                                </div>
-                            </div>
-                     </div>
+                                </span>
+                                <span>
+                                    <div className="event-title-all">{evt.title}</div>
+                                    <div className="event-info-all"><FontAwesome name="map-marker"/> {evt.venue}</div>
+                                    <div className="event-info-all"><FontAwesome name="calendar"/> {evt.date}</div>
+                                </span>
+                            </span>
+                     </a>
                 );
             })}
         </div>

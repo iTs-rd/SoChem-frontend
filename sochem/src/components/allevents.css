@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
 img{
     border-radius: 0.5rem;
 }
@@ -7,12 +9,26 @@ img{
 }
 
 .event-title-all{
-    font-size: 2.5rem;
+    font-size: 1.5rem;
+    margin-top: 1vh;
 }
 .img-events-cov{
     height: 500px;
+    font-family: 'Lato', sans-serif;
     width: auto;
 }
+.event-info-all{
+    font-size: 1.3rem;
+}
+.zoom {
+    transition: transform .2s; /* Animation */
+    margin: 0 auto;
+  }
+  
+  .zoom:hover {
+      z-index: 10;
+    transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  }
 @media screen and (max-width: 600px) {
     .event-title-all{
         font-size: 25px;

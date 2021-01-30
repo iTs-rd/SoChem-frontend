@@ -32,7 +32,7 @@ function Events() {
     return (
         <div>
             <Navbar/>
-            <div class="sidenav">
+            {/* <div class="sidenav">
                 <a href="" onClick={ () => {eventSelected(null)}}><h1 id="past"><strong>Past Events</strong></h1></a>
                 <hr/>
 
@@ -41,8 +41,8 @@ function Events() {
                         <a href="#" onClick={ () => {eventSelected(evt.id)}}>{evt.title}</a>
                     );
                 })}    
-            </div>
-            <div class="main">
+            </div> */}
+            <div class="container">
                 {eventnum ?
                     eventlist.map( evt => {
                         return(
@@ -52,7 +52,9 @@ function Events() {
                         );
                     })
                 :
-                <Allevents eventlist={eventlist} eventSelected={eventSelected}/>
+                <div>
+                    <Allevents eventlist={eventlist} eventSelected={eventSelected}/>
+                </div>
                 }
             </div>
         </div>
