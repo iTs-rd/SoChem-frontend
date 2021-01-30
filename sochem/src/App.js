@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import WOW from 'wowjs';
 import 'bootstrap/dist/css/bootstrap.min.css'
+import 'animate.css/animate.css'
 import './App.css';
 import { useCookies } from 'react-cookie';
 import Footer from './components/footer';
@@ -20,6 +22,7 @@ function App() {
   const [token, setToken] = useCookies(['mr-token']);
 
   useEffect(()=>{
+    new WOW.WOW().init();
     if(token['mr-token']){
       fetch('https://api.sochem.org/api/forum-post/', {
           method: 'GET',
