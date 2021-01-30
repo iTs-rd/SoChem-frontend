@@ -136,6 +136,8 @@ a{
 
 .image-card-profile-main{
     border-radius: 100%;
+    width: 20rem;
+    height: auto;
     
 }
 #profile-comment-all:nth-of-type(odd){
@@ -150,7 +152,7 @@ a{
   font-size:15px;
   line-height:24px;
   color:#737373;
-  margin-top: 70px;
+  margin-top: 0;
 }
 .site-footer hr
 {

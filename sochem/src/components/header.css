@@ -10,9 +10,17 @@
     background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
     width: 100%;
     height: auto;
-    padding: 1rem;
     margin-bottom: 5rem;
     padding: 5rem;
+}
+.home-header{
+    padding: 3rem;
+    margin-bottom: 4.5rem;
+    width: 100%;
+    height: auto;
+    background-image: url('./images/image.jpg');
+    background-size: cover;
+    background-position: center top;
 }
 
 

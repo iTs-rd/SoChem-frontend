@@ -7,7 +7,7 @@ var FontAwesome = require('react-fontawesome');
 function Header(){
 
     return (
-        <div className="cont-home-sochem-jb" style={{ backgroundImage: `url(${bg})` }}>
+        <div className="home-header">
             <div className="col-12 col-md-12 text-center">
                 <img src={logo} style={{width:200, height:200}}/>
             </div>

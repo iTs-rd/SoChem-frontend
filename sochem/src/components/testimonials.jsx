@@ -2,12 +2,29 @@ import React , { useState, useEffect } from 'react';
 import './assets/css/main.css';
 import img1 from './images/test1.jpeg';
 import img2 from './images/test2.jpeg';
+import img3 from './images/test3.jpeg';
+
 
 function Testimonials(){
     return(
         <section className="wrapper container">
         <div className="inner">
             <div className="testimonials">
+                <section>
+                    <div className="content">
+                        <blockquote>
+                            <p className="testimonial-text">I feel Sochem is what that knits this huge department of ours together. 
+                             It gave me a chance to bond with seniors,
+                             learn so much from them, and so did our juniors. At Sochem, we came together, had fun, learned, and grew :)</p>
+                        </blockquote>
+                        <div className="author">
+                            <div className="image">
+                                <img src={img3} alt="" />
+                            </div>
+                            <p className="credit">- <strong>Shravani Eleswarapu</strong> <span>Batch of 2019</span></p>
+                        </div>
+                    </div>
+                </section>
                 <section>
                     <div className="content">
                         <blockquote>
@@ -35,19 +52,6 @@ function Testimonials(){
                                 <img src={img2} alt="" />
                             </div>
                             <p className="credit">- <strong>Sushant Kumar Sinha</strong> <span>Batch of 2020</span></p>
-                        </div>
-                    </div>
-                </section>
-                <section>
-                    <div className="content">
-                        <blockquote>
-                            <p className="testimonial-text">Nunc lacinia ante nunc ac lobortis ipsum. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus.</p>
-                        </blockquote>
-                        <div className="author">
-                            <div className="image">
-                                <img src="images/pic02.jpg" alt="" />
-                            </div>
-                            <p className="credit">- <strong>Janet Smith</strong> <span>CEO - ABC Inc.</span></p>
                         </div>
                     </div>
                 </section>

@@ -6,21 +6,11 @@ import Footer from './components/footer';
 import logo from './components/sochemlogo.png';
 import Moment from 'moment';
 import bg from './components/images/image.jpg';
-import slide1 from './components/images/slide-home-1.jpg'
-import slide2 from './components/images/slide-home-2.jpg'
-import slide3 from './components/images/slide-home-3.jpg';
-import slide4 from './components/images/slide-home-4.jpg';
-import slide5 from './components/images/slide-home-5.jpg';
-import slide6 from './components/images/slide-home-6.jpg';
-import slide7 from './components/images/slide-home-7.jpg';
-import slide8 from './components/images/slide-home-8.jpg';
-import slide9 from './components/images/slide-home-9.jpg';
-import slide10 from './components/images/slide-home-10.jpg';
-import slide11 from './components/images/slide-home-11.jpg';
 import Navbar from './components/navbar';
 import Header from './components/header';
 import { ListGroupItem } from 'react-bootstrap';
 import Testimonials from './components/testimonials';
+import Carousel from './components/caruosel';
 
 var FontAwesome = require('react-fontawesome');
 
@@ -90,7 +80,6 @@ function App() {
               <h2 className="about-us">About Us</h2>
               <p className="home-about-text">
               The Society of Chemical Engineers a.k.a SoChem is a society run by the students of the department for the students of the department.
-               Anyone who wishes to be involved with the department is welcome to join the society. 
                SoChem ensures that each and every student within the department gets the most out of their time with us at IIT(BHU) Varanasi.
                       <br></br>
               From fancy festival dinners, important job finding, and everything in-between, SoChem is there to give a helping hand. 
@@ -102,7 +91,7 @@ function App() {
               across all the years within the department. These events are a chance for you to do some networking and have fun. 
               <br></br>
               <br></br>
-              The department as a whole has strong links with various industries in the engineering and financial sectors.
+              The society as a whole has strong links with various industries in the engineering and financial sectors.
               The society organizes presentations from company representatives and application days, held within the department
               itself, directly aimed at chemical engineering students.
                       <br></br>
@@ -112,58 +101,7 @@ function App() {
               </p>
           </div>
       <Testimonials/>
-      <div className="container d-none d-sm-block">
-      <div id="carouselExampleIndicators" class="carousel carousel-home slide" data-ride="carousel">
-          <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-          </ol>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img class="d-block w-100 carousel-img" src={slide3} alt="First slide"/>
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100 carousel-img" src={slide1} alt="Second slide"/>
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100 carousel-img" src={slide2} alt="Third slide"/>
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100 carousel-img" src={slide4} alt="Third slide"/>
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100 carousel-img" src={slide5} alt="Third slide"/>
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100 carousel-img" src={slide6} alt="Third slide"/>
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100 carousel-img" src={slide7} alt="Third slide"/>
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100 carousel-img" src={slide8} alt="Third slide"/>
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100 carousel-img" src={slide9} alt="Third slide"/>
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100 carousel-img" src={slide10} alt="Third slide"/>
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100 carousel-img" src={slide11} alt="Third slide"/>
-          </div>
-        </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-      </div>
-      </div>
+      <Carousel/>
       <Footer/>
 
     </div>

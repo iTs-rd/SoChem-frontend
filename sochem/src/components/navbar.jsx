@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+ import React, { useState, useEffect } from 'react';
 import './navbar.css';
 import logo from './sochemlogo.png';
 import { useCookies } from 'react-cookie';
@@ -27,7 +27,7 @@ function Navbar(){
                     <div className="collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav ml-auto">
                             <a className="nav-item" href="#">
-                                <a className="nav-link" name="home" onClick={()=> {window.location='/'}}>HOME</a>
+                                <a id="navbar-main-text" className="nav-link" name="home" onClick={()=> {window.location='/'}}>HOME</a>
                             </a>
                             <a className="nav-item" href="#">
                                 <a className="nav-link" name="events" onClick={()=> {window.location='/events'}}>EVENTS</a>
