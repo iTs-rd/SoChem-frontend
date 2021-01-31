@@ -79,9 +79,9 @@ function App() {
             </div>
           </div>
       </div>
-      <div className="container text-center about-us-div wow animate__zoomIn">
+      <div className="container text-center about-us-div">
               <h2 className="about-us">About Us</h2>
-              <p className="home-about-text">
+              <p className="home-about-text wow animate__zoomIn">
               The Society of Chemical Engineers a.k.a SoChem is a society run by the students of the department for the students of the department.
                SoChem ensures that each and every student within the department gets the most out of their time with us at IIT(BHU) Varanasi.
                       <br></br>
