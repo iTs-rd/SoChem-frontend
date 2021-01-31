@@ -37,7 +37,7 @@ function Form(props){
 
     return (
         <div>
-                {props.showNewPost ? null : <div id = "a" onClick={newPostToggle}><span>Add New Post</span>
+                {props.showNewPost ? null : <div id = "a" onClick={newPostToggle}><span>New Post</span>
                         <button id = "liquid" data-toggle="modal" data-target="#exampleModalCenter"></button></div>}
                         <div>
                             <div class="modal fade bd-example-modal-lg" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">

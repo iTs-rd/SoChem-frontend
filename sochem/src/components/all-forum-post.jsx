@@ -21,7 +21,7 @@ function AllForumPosts(props){
      }, [])
 
     return (
-            <div>
+            <div className="ml-0">
                 <div className="jumbotron p-2 mb-1 mt-1" id="heading-forum-post">
                     <div className="text-light" style={{fontSize:'1.5rem'}}>{props.post.heading}</div>
                     <span className="text-light">

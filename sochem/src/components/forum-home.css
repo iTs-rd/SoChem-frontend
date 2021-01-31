@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Rubik');
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans:display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
 #heading-forum-post{
     background-color: #2e66a5;
@@ -57,9 +59,8 @@ body{
 #a span {
   position: relative;
   z-index: 1;
-  font-size: 15px;
-  letter-spacing: 4px;
-  color: black;
+  font-size: 19px;
+  font-family: 'Merriweather Sans', sans-serif;
   font-style: bold;
  }
 

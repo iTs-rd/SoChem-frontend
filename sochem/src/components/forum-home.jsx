@@ -79,7 +79,7 @@ function Forum(){
                         {posts.length===0 ? <h1 style={{marginTop:300, marginLeft:150}}>No post to show :(</h1> : null}
                         {posts.map((post, index) => {
                             return (
-                                <div className="border mt-4 rounded p-2 bg-light" key={post.id}>
+                                <div className="border mt-4 rounded p-2 bg-light ml-0" key={post.id}>
                                     <AllForumPost post={post} user={user} token={token}/>
                                     <span className="mb-5">
                                     <h3 className="text-warning" onClick={()=>toggleComment(post.id)}><FontAwesome name="comment"/>

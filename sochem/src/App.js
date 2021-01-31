@@ -49,7 +49,7 @@ function App() {
                 </div>
                 {token['mr-token'] ?
                 <div>
-                <ul><li><h5 className="mx-2 my-4">Case Study PS out. Check Events section.</h5></li></ul>
+                <ul><li><h5 className="mx-2 my-4"><a href="/events/Case-Study(First-Year)">Case Study PS out. Check Events section.</a></h5></li></ul>
                 </div> : <h4 className="text-secondary text-center mt-3">Login to view this section.</h4 >}
             </div>
             <div className="col-12 col-md-6 border rounded mt-3 mt-md-0 shadow px-4">
