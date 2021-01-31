@@ -1,3 +1,6 @@
 .card{
     animation-duration: 1.6s;
 }
+#cloud-card{
+    background: none;
+}

@@ -12,6 +12,7 @@ import core from './images/cloud-core.png'
 import gate from './images/cloud-gate.png';
 import gre from './images/cloud-gre.png';
 import oe from './images/cloud-oe.png';
+import Footer from './footer';
 
 
 function Cloud(){
@@ -26,14 +27,14 @@ function Cloud(){
     return(
         <div className="body-font">
             <Navbar/>
-            <div className="jumbotron cont-home-sochem" style={{background:'#dbdbdb'},{marginTop:'70px'}}>
+            <div className="jumbotron cont-home-sochem">
                 <h1 className="jumbotron-heading-top">SoChem Cloud</h1>
             </div>
-            <div className="container container-fluid text-center bg-light p-3">
+            <div className="container container-fluid text-center p-3">
                 <div className="row align-items-end">
-                    <div class="col-12 col-sm-6 col-md-4 d-flex justify-content-center">
+                    <div class="col-12 col-sm-6 col-md-4 d-flex justify-content-center bg-none">
                         <a href="https://drive.google.com/drive/u/5/folders/15iEbYDjKoCVh-AmlbUN0-3YZiKoCG1gr">
-                            <div className="card wow animate__flipInX">
+                            <div id="cloud-card" className="card wow animate__flipInX">
                                 <img class="card-img-top" src={books} alt="Card image cap"/>
                                 <div class="card-body">
                                     <p class="card-text text-center">Books/Novels</p>
@@ -43,7 +44,7 @@ function Cloud(){
                     </div>
                     <div class="col-12 col-sm-6 col-md-4 d-flex justify-content-center">
                         <a href="https://drive.google.com/drive/u/5/folders/1cCApJe4LYWJ43wyr0p3HMsjK5xPE-RTa">
-                            <div class="card wow animate__flipInX">
+                            <div id="cloud-card" class="card wow animate__flipInX">
                                 <img class="card-img-top" src={core} alt="Card image cap"/>
                                 <div class="card-body">
                                     <p class="card-text text-center">Core Courses</p>
@@ -53,7 +54,7 @@ function Cloud(){
                     </div>
                     <div class="col-12 col-sm-6 col-md-4 d-flex justify-content-center">
                         <a href="https://drive.google.com/drive/u/5/folders/19doEA6GO4HF8oqWTgPJbOx9xTCvJlJqE">
-                            <div class="card wow animate__flipInX">
+                            <div id="cloud-card" class="card wow animate__flipInX">
                                 <img class="card-img-top" src={gate} alt="Card image cap"/>
                                 <div class="card-body">
                                     <p class="card-text text-center">Gate Preparation</p>
@@ -63,7 +64,7 @@ function Cloud(){
                     </div>
                     <div class="col-12 col-sm-6 col-md-4 d-flex justify-content-center">
                         <a href="https://drive.google.com/drive/u/5/folders/1ojVB0uXyx5JaX8JlSg0JHZaD5cDkKO5S">
-                            <div class="card wow animate__flipInX">
+                            <div id="cloud-card" class="card wow animate__flipInX">
                                 <img class="card-img-top" src={gre} alt="Card image cap"/>
                                 <div class="card-body">
                                     <p class="card-text text-center">GRE Preparation</p>
@@ -73,7 +74,7 @@ function Cloud(){
                     </div>
                     <div class="col-12 col-sm-6 col-md-4 d-flex justify-content-center">
                         <a href="https://drive.google.com/drive/u/5/folders/1-20gmIL9mSEOeXkBj9cSGq7M0qGfLWkZ">
-                            <div class="card wow animate__flipInX">
+                            <div id="cloud-card" class="card wow animate__flipInX">
                                 <img class="card-img-top" src={hulm} alt="Card image cap"/>
                                 <div class="card-body">
                                     <p class="card-text text-center">HULM</p>
@@ -83,7 +84,7 @@ function Cloud(){
                     </div>
                     <div class="col-12 col-sm-6 col-md-4 d-flex justify-content-center">
                         <a href="https://drive.google.com/drive/u/5/folders/1ojVB0uXyx5JaX8JlSg0JHZaD5cDkKO5S">
-                        <div class="card wow animate__flipInX">
+                        <div id="cloud-card" class="card wow animate__flipInX">
                             <img class="card-img-top" src={online} alt="Card image cap"/>
                             <div class="card-body">
                                 <p class="card-text text-center">Online Courses</p>
@@ -93,7 +94,7 @@ function Cloud(){
                     </div>
                     <div class="col-12 col-sm-6 col-md-4 d-flex justify-content-center">
                         <a href="https://drive.google.com/drive/u/5/folders/1l-Ww9Wx73wrIBdh-gztKfp-fX_sjanh5">
-                        <div class="card wow animate__flipInX">
+                        <div id="cloud-card" class="card wow animate__flipInX">
                             <img class="card-img-top" src={oe} alt="Card image cap"/>
                             <div class="card-body">
                                 <p class="card-text text-center">Open Electives</p>
@@ -103,7 +104,7 @@ function Cloud(){
                     </div>
                     <div class="col-12 col-sm-6 col-md-4 d-flex justify-content-center">
                         <a href="https://drive.google.com/drive/u/5/folders/1kP586gtLGQI4b-EiyGewZbL6D9WBNOXh">
-                        <div class="card wow animate__flipInX">
+                        <div id="cloud-card" class="card wow animate__flipInX">
                             <img class="card-img-top" src={coding} alt="Card image cap"/>
                             <div class="card-body">
                                 <p class="card-text text-center">Programming</p>
@@ -113,6 +114,7 @@ function Cloud(){
                     </div>
                 </div>
             </div>
+            <Footer/>
         </div>
     );
 }
