@@ -1,28 +1,31 @@
 import React, { useState, useEffect } from 'react';
 import './allevents.css';
+import Footer from './footer';
 var FontAwesome = require('react-fontawesome');
 
 
 function Allevents(props) {
 
     return (
-        <div className="row mt-5 p-3">
-            {props.eventlist.map( (evt, index) => {
-                return (
-                     <a href={`events/${evt.title}`} onClick={ () => {props.eventSelected(evt.id)}} className="col-12 col-sm-6 col-md-4 mb-5 bg-light p-4 zoom">
-                            <span>
+        <div>
+            <div className="row mt-5 p-3">
+                {props.eventlist.map( (evt, index) => {
+                    return (
+                        <a href={`events/${evt.title.toLowerCase()}`} className="col-12 col-sm-6 col-md-4 mb-5 bg-light p-4 zoom">
                                 <span>
-                                    <img src={evt.cover1} class="img-fluid"></img>
+                                    <span>
+                                        <img src={evt.cover1} class="img-fluid"></img>
+                                    </span>
+                                    <div>
+                                        <div className="event-title-all">{evt.title}</div>
+                                        <div className="event-info-all"><FontAwesome name="map-marker"/> {evt.venue}</div>
+                                        <div className="event-info-all"><FontAwesome name="calendar"/> {evt.date}</div>
+                                    </div>
                                 </span>
-                                <div>
-                                    <div className="event-title-all">{evt.title}</div>
-                                    <div className="event-info-all"><FontAwesome name="map-marker"/> {evt.venue}</div>
-                                    <div className="event-info-all"><FontAwesome name="calendar"/> {evt.date}</div>
-                                </div>
-                            </span>
-                     </a>
-                );
-            })}
+                        </a>
+                    );
+                })}
+            </div>
         </div>
     )
 }
