@@ -79,7 +79,7 @@ function App() {
             </div>
           </div>
       </div>
-      <div className="container text-center about-us-div">
+      <div className="container text-center about-us-div wow animate__zoomIn">
               <h2 className="about-us">About Us</h2>
               <p className="home-about-text">
               The Society of Chemical Engineers a.k.a SoChem is a society run by the students of the department for the students of the department.

@@ -66,6 +66,7 @@
   .about-us-div{
     margin-top: 5rem;
     padding: 2rem;
+    animation-duration: 1s;
   }
 
   .home-updates-forum{
