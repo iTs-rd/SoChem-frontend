@@ -1,35 +1,57 @@
 import React, { useState, useEffect } from 'react';
+import API from '../api-service'; 
+import { useParams } from 'react-router-dom';
+import { useCookies } from 'react-cookie';
 var FontAwesome = require('react-fontawesome');
 
-function Anevent(props) {
+function Anevent() {
+
+    const { title } = useParams();
+    const [ token, setToken ] = useCookies(['mr-token']);
+    const [ eventlist, setEventlist] = useState([]);
+    const [ event, setEvent] = useState([]);
+
+    const allEvents = () => {
+        API.getEvents({'token':token['mr-token']})
+           .then( resp => setEvent(resp.find( ev => ev.title === String(title))))
+           .catch( error => console.log(error))
+    }
+
+    useEffect( () => {
+        if(!token['mr-token']) window.location.href = '/login';
+        {allEvents()}
+        console.log(eventlist);
+        console.log(title);
+    },[token])
 
     return (
         <div>
+            { event ? 
             <div className="container-fluid jumbotron pt-4">
-              <h1 className="event-title-all">{props.event.title}</h1>
+              <h1 className="event-title-all">{event.title}</h1>
               <hr></hr>
-              <h4 className="event-info-all"><FontAwesome name="map"/> {props.event.venue} &nbsp;
-              <FontAwesome name="calendar"/> {props.event.date}</h4>
+              <h4 className="event-info-all"><FontAwesome name="map"/> {event.venue} &nbsp;
+              <FontAwesome name="calendar"/> {event.date}</h4>
               <br/>
 
               <div class="container">
                 <div class="row">
-                    {props.event.cover1 && 
+                    {event.cover1 && 
                         <div className="col-12">
                         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                         <ol class="carousel-indicators">
                             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                            {props.event.cover2 && 
+                            {event.cover2 && 
                             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                             }
                         </ol>
                         <div class="carousel-inner">
                             <div class="carousel-item active text-center">
-                            <img src={props.event.cover1} class="img-fluid img-events-cov"  alt="..."/>
+                            <img src={event.cover1} class="img-fluid img-events-cov"  alt="..."/>
                             </div>
-                            {props.event.cover2 &&
+                            {event.cover2 &&
                             <div class="carousel-item text-center">
-                            <img src={props.event.cover2} class="img-fluid img-events-cov" alt="..."/>
+                            <img src={event.cover2} class="img-fluid img-events-cov" alt="..."/>
                             </div>
                             }
                         </div>
@@ -45,9 +67,9 @@ function Anevent(props) {
                         </div>
                     }
                     <div className="col-12 mt-5">
-                       <h5 className="event-body-an"><div dangerouslySetInnerHTML={{ __html: props.event.description }}/></h5>
-                       <h6>{props.event.file1 &&
-                                <a href={props.event.file1}>Download PS</a>
+                       <h5 className="event-body-an"><div dangerouslySetInnerHTML={{ __html: event.description }}/></h5>
+                       <h6>{event.file1 &&
+                                <a href={event.file1}>Download PS</a>
                         }</h6>
                     </div>
                     <hr></hr>
@@ -55,6 +77,9 @@ function Anevent(props) {
               </div>
 
             </div>
+            :
+            <h1>Event doesn't exist</h1>
+            }
         </div>
     )
 }
