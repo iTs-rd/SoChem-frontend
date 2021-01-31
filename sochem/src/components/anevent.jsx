@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import API from '../api-service'; 
 import { useParams } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
+import Navbar from './navbar';
 var FontAwesome = require('react-fontawesome');
 
 function Anevent() {
@@ -19,16 +20,16 @@ function Anevent() {
 
     useEffect( () => {
         if(!token['mr-token']) window.location.href = '/login';
-        {allEvents()}
-        console.log(eventlist);
-        console.log(title);
+        allEvents()
     },[token])
 
     return (
         <div>
+            <Navbar/>
+        <div className="container">
             { event ? 
-            <div className="container-fluid jumbotron pt-4">
-              <h1 className="event-title-all">{event.title}</h1>
+            <div className="container-fluid jumbotron pt-4 bg-light">
+              <div id="anevent-title">{event.title}</div>
               <hr></hr>
               <h4 className="event-info-all"><FontAwesome name="map"/> {event.venue} &nbsp;
               <FontAwesome name="calendar"/> {event.date}</h4>
@@ -67,7 +68,7 @@ function Anevent() {
                         </div>
                     }
                     <div className="col-12 mt-5">
-                       <h5 className="event-body-an"><div dangerouslySetInnerHTML={{ __html: event.description }}/></h5>
+                       <span className="event-body-an anevent-desc"><div dangerouslySetInnerHTML={{ __html: event.description }}/></span>
                        <h6>{event.file1 &&
                                 <a href={event.file1}>Download PS</a>
                         }</h6>
@@ -80,6 +81,7 @@ function Anevent() {
             :
             <h1>Event doesn't exist</h1>
             }
+        </div>
         </div>
     )
 }

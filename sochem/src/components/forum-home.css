@@ -6,7 +6,6 @@
 #heading-forum-post{
     background-color: #2e66a5;
     font-family: 'Open Sans', sans-serif;
-    font-weight: 800;
 }
 
 #newComment{
@@ -14,7 +13,7 @@
 }
 
 .body-font{
-    font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 #allComments{
@@ -325,5 +324,5 @@ a{
 .all-forum-post-text{
   font-size: 1.1rem;
   font-family: 'Open Sans', sans-serif;
-  font-weight: 600;
+  font-weight: 500;
 }
