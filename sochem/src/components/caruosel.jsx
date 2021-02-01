@@ -14,7 +14,7 @@ import './carousel.css';
 
 function Carousel(){
     return(
-<div id="carousel-main-div" className="img-fluid container d-none d-sm-block img-fluid bg-light">
+<div id="carousel-main-div" className="img-fluid container d-none d-sm-block img-fluid">
       <div id="carouselExampleIndicators" class="img-fluid carousel carousel-home slide" data-ride="carousel">
         <div class="img-fluid carousel-inner">
           <div class="img-fluid carousel-item active">

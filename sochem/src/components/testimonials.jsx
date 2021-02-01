@@ -7,7 +7,7 @@ import img3 from './images/test3.jpeg';
 
 function Testimonials(){
     return(
-        <section className="mb-5  pb-5 wrapper container">
+        <section className="mb-0 pt-5 pb-5 wrapper container">
         <div className="inner">
             <div className="testimonials">
                 <section className="wow animate__slideInLeft" data-wow-duration="1.5s">
