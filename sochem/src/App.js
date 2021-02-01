@@ -50,8 +50,8 @@ function App() {
                 {token['mr-token'] ?
                 <div className="mt-4">
                 <ul>
-                <li className="home-updates mb-2"><span ><a href="https://docs.google.com/spreadsheets/d/1DH2aXixmXeDrFa-wwxVR_dbSouDMa6tjqmfHzJbCehA/edit#gid=0">List of Registered Students from First Year</a></span></li>
-                <li className="home-updates"><span ><a href="/events/Case-Study(First-Year)">Case Study PS out. Check Events section.</a></span></li>
+                <li className="home-updates mb-2"><span ><a href="https://docs.google.com/spreadsheets/d/1BpTjp9lKcgRu0ioZ8ob841Q92GV8m34osEBG0tppTdk/edit#gid=1810039578" id="home-update-a">List of Registered Students from First Year</a></span></li>
+                <li className="home-updates"><span><a id="home-update-a" href="/events/Case-Study(First-Year)">Case Study PS out</a>.</span></li>
                 </ul>
                 </div> : <h4 className="text-secondary text-center mt-3">Login to view this section.</h4 >}
             </div>
@@ -66,7 +66,7 @@ function App() {
                               <div className="alternate-bgcolor" className="m-4">
                                   {index<=5 ? 
                                     <span>
-                                        <a onClick={() =>  window.location ='/forum'} href="#" style={{fontSize:'1.5rem'}}><FontAwesome name="comment"/> {post.heading}</a>
+                                        <a onClick={() =>  window.location ='/forum'} href="#" className="home-forum-text"><FontAwesome name="comment"/> {post.heading}</a>
                                         <br/>
                                         <span  id="home-forum-name" className="text-secondary" style={{fontSize:20}}><FontAwesome name="user"/> {post.author_name}
                                         &nbsp;

@@ -7,10 +7,10 @@ import img3 from './images/test3.jpeg';
 
 function Testimonials(){
     return(
-        <section className="mb-5  pb-5 wrapper container">
+        <section className="mb-0 pt-5 pb-5 wrapper container">
         <div className="inner">
             <div className="testimonials">
-                <section>
+                <section className="wow animate__slideInLeft" data-wow-duration="1.5s">
                     <div className="content">
                         <blockquote>
                             <p className="testimonial-text">I feel Sochem is what that knits this huge department of ours together. 
@@ -40,7 +40,7 @@ function Testimonials(){
                         </div>
                     </div>
                 </section>
-                <section>
+                <section className="wow animate__slideInRight" data-wow-duration="1.5s">
                     <div className="content">
                         <blockquote>
                             <p className="testimonial-text">Having a culture within department is one of the key things, 

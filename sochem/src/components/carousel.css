@@ -1,15 +1,18 @@
 .carousel-home{
-    height: 40rem;
-    width: auto;
-  }
-  .carousel-img{
     height: auto;
     width: auto;
-    max-height: 38rem;
+    padding-bottom: 0rem;
+    margin-bottom: 0rem;
+  }
+  .carousel-img{
+    height: 30rem;
+    width: auto;
   }
 
   #carousel-main-div{
-    padding: 5rem;
+    max-height: 50rem;
+    max-width: 55rem;
+    align-items: center;
   }
   @media (max-width:800px){
       #carousel-main-div{
