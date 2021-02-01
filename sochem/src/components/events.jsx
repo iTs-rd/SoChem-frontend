@@ -32,16 +32,6 @@ function Events() {
     return (
         <div>
             <Navbar/>
-            {/* <div class="sidenav">
-                <a href="" onClick={ () => {eventSelected(null)}}><h1 id="past"><strong>Past Events</strong></h1></a>
-                <hr/>
-
-                {eventlist.map( evt => {
-                    return(
-                        <a href="#" onClick={ () => {eventSelected(evt.id)}}>{evt.title}</a>
-                    );
-                })}    
-            </div> */}
             <div class="container">
                 {eventnum ?
                     eventlist.map( evt => {
@@ -57,6 +47,7 @@ function Events() {
                 </div>
                 }
             </div>
+            <Footer/>
         </div>
     )
 }

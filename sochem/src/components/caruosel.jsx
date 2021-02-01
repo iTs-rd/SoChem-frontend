@@ -14,13 +14,8 @@ import './carousel.css';
 
 function Carousel(){
     return(
-<div className="img-fluid container d-none d-sm-block img-fluid">
+<div id="carousel-main-div" className="img-fluid container d-none d-sm-block img-fluid bg-light">
       <div id="carouselExampleIndicators" class="img-fluid carousel carousel-home slide" data-ride="carousel">
-          <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-          </ol>
         <div class="img-fluid carousel-inner">
           <div class="img-fluid carousel-item active">
             <img class="d-block w-100 carousel-img" src={slide3} alt="First slide"/>

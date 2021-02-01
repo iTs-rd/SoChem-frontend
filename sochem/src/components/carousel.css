@@ -1,6 +1,5 @@
 .carousel-home{
     height: 40rem;
-    margin-top: 0.5rem;
     width: auto;
   }
   .carousel-img{
@@ -9,8 +8,8 @@
     max-height: 38rem;
   }
 
-  #carousel-man-div{
-      padding: 4rem;
+  #carousel-main-div{
+    padding: 5rem;
   }
   @media (max-width:800px){
       #carousel-main-div{

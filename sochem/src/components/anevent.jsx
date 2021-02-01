@@ -3,6 +3,7 @@ import API from '../api-service';
 import { useParams } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
 import Navbar from './navbar';
+import Footer from './footer';
 var FontAwesome = require('react-fontawesome');
 
 function Anevent() {
@@ -14,7 +15,7 @@ function Anevent() {
 
     const allEvents = () => {
         API.getEvents({'token':token['mr-token']})
-           .then( resp => setEvent(resp.find( ev => ev.title === String(title))))
+           .then( resp => setEvent(resp.find( ev => ev.title.toLowerCase() === String(title))))
            .catch( error => console.log(error))
     }
 
@@ -82,6 +83,7 @@ function Anevent() {
             <h1>Event doesn't exist</h1>
             }
         </div>
+        <Footer/>
         </div>
     )
 }
