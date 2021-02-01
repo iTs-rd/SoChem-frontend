@@ -18,7 +18,7 @@ img{
     font-weight: normal;
     margin-top: 1vh;
     margin-bottom: 2vh;
-    opacity: 80%;
+    opacity: 0.8;
 }
 .img-events-cov{
     height: 500px;
@@ -28,7 +28,7 @@ img{
 .event-info-all{
     font-size: 1.3rem;
     font-family: 'Open Sans', sans-serif;
-    opacity: 80%;
+    opacity: 0.8;
 }
 .zoom {
     transition: transform .2s; /* Animation */
