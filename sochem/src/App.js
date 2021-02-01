@@ -48,8 +48,11 @@ function App() {
                   <h4 className="text-light home-updates-forum">Updates</h4>
                 </div>
                 {token['mr-token'] ?
-                <div>
-                <ul><li><h5 className="mx-2 my-4"><a href="/events/Case-Study(First-Year)">Case Study PS out. Check Events section.</a></h5></li></ul>
+                <div className="mt-4">
+                <ul>
+                <li className="home-updates mb-2"><span ><a href="https://docs.google.com/spreadsheets/d/1DH2aXixmXeDrFa-wwxVR_dbSouDMa6tjqmfHzJbCehA/edit#gid=0">List of Registered Students from First Year</a></span></li>
+                <li className="home-updates"><span ><a href="/events/Case-Study(First-Year)">Case Study PS out. Check Events section.</a></span></li>
+                </ul>
                 </div> : <h4 className="text-secondary text-center mt-3">Login to view this section.</h4 >}
             </div>
             <div className="col-12 col-md-6 border rounded mt-3 mt-md-0 shadow px-4">

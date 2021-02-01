@@ -78,3 +78,8 @@
     opacity: 80%;
     animation-duration: 1s;
   }
+  .home-updates{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
