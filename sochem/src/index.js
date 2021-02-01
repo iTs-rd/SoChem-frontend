@@ -13,7 +13,7 @@ import Events from './components/events.jsx';
 import Anevent from './components/anevent';
 import People from './components/people';
 
-
+document.body.style.zoom = 0.9;
 const routing = (
   <BrowserRouter>
     <CookiesProvider>
