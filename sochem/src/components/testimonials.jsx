@@ -13,9 +13,9 @@ function Testimonials(){
                 <section className="wow animate__slideInLeft" data-wow-duration="1.5s">
                     <div className="content">
                         <blockquote>
-                            <p className="testimonial-text">I feel Sochem is what that knits this huge department of ours together. 
+                            <p className="testimonial-text">I feel SoChem is what that knits this huge department of ours together. 
                              It gave me a chance to bond with seniors,
-                             learn so much from them, and so did our juniors. At Sochem, we came together, had fun, learned, and grew :)</p>
+                             learn so much from them, and so did our juniors. At SoChem, we came together, had fun, learned, and grew :)</p>
                         </blockquote>
                         <div className="author">
                             <div className="image">
