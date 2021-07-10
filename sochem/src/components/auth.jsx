@@ -33,7 +33,7 @@ function Login(){
 
     const onSucces = (res) =>{
         setShowLoader(true);
-        fetch('https://api.sochem.org/api/logup', {
+        fetch('https://api.sochem.in/api/logup', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

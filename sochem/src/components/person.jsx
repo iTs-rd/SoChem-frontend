@@ -10,7 +10,7 @@ function Person(props){
     const [userDetail, setUserDetail] = useState(null);
     const [token, setToken] = useCookies(['mr-token']);
     useEffect(()=>{
-        fetch(`https://api.sochem.org/api/users/${props.userId.id}`, {
+        fetch(`https://api.sochem.in/api/users/${props.userId.id}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -21,7 +21,7 @@ function Person(props){
     },[])
 
     useEffect(()=>{
-        fetch(`https://api.sochem.org/api/user-extension?id=${props.userId.id}`, {
+        fetch(`https://api.sochem.in/api/user-extension?id=${props.userId.id}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',

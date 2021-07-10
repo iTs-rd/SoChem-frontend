@@ -24,7 +24,7 @@ function App() {
   useEffect(()=>{
     new WOW.WOW().init();
     if(token['mr-token']){
-      fetch('https://api.sochem.org/api/forum-post/', {
+      fetch('https://api.sochem.in/api/forum-post/', {
           method: 'GET',
           headers: {
             'Authorization': `Token ${token['mr-token']}`

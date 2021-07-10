@@ -20,7 +20,7 @@ function Form(props){
     }
 
     const submitClicked = () =>{
-        fetch('https://api.sochem.org/api/forum-post/', {
+        fetch('https://api.sochem.in/api/forum-post/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
